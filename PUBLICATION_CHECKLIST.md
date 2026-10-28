@@ -16,7 +16,7 @@
 ## Awaiting account-side actions
 
 - [ ] Connect GitHub account in Zenodo and enable **rrlarenas/PIIS** in https://zenodo.org/account/settings/github/
-- [ ] **After** Zenodo is enabled, create and publish a GitHub release from the latest `main`:
+- [x] **After** Zenodo is enabled, create and publish a GitHub release from the latest `main`:
   - Tag: `draft-02`
   - Title: `PIIS Working Draft 02 — Public Review (ES/EN)`
   - Description: copy `RELEASE_NOTES_DRAFT_02.md`
@@ -29,3 +29,7 @@
 **Status:** Open technical proposal. A GitHub document commit is not a GitHub release. A GitHub release is not by itself an approved standard or an RFC.
 
 **Important:** Zenodo must be enabled for the repository *before* the GitHub release is published, so that the release will be automatically archived.
+
+## Verified GitHub publication
+
+Published at https://github.com/rrlarenas/PIIS/releases/tag/draft-02 on 28 October 2026. The release creation workflow completed successfully. Zenodo archival status and DOI are pending independent verification.
