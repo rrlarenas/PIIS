@@ -1,0 +1,32 @@
+name: Publish PIIS Working Draft 02
+
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-working-draft-02.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the release source
+        uses: actions/checkout@v4
+      - name: Publish the citable working draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view draft-02 >/dev/null 2>&1; then
+            echo "Release draft-02 already exists; no changes made."
+            exit 0
+          fi
+          gh release create draft-02 \
+            --target "$GITHUB_SHA" \
+            --title "PIIS Working Draft 02 — Public Review (ES/EN)" \
+            --notes-file RELEASE_NOTES_DRAFT_02.md \
+            --latest=false
+          echo "GitHub release draft-02 published for Zenodo archiving."
