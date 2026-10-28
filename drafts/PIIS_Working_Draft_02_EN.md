@@ -290,3 +290,104 @@ The following catalog is a **proposed initial profile**. Statistical details and
 6. Cost **MUST** be related to conforming work and disclose assumptions about infrastructure, operations, licensing, consumption and time horizon. It is not a measure of conformance.
 7. Internal diagnostic metrics **MAY** explain causes but **MUST NOT** justify an E2E classification different from the one actually measured.
 
+### 14.3. Conditions for Comparability
+
+The necessary condition of equality is not that engines have similar designs. It is that they be required to deliver **the same functional outcome under equivalent external constraints and workloads**.
+
+Any comparison presented as PIIS-qualified **MUST** identify and publish:
+
+1. Identity, version and verifiable fingerprint of the functional contract and portable definition evaluated.
+2. Version of each implementation and any components needed to realize the contract, without privileging any architecture.
+3. Inputs, sizes, case distribution, initial states, arrival rates, bursts, concurrency and test duration.
+4. Reproducible external conditions: test systems, network, storage, limits, responses, induced failures and service timings.
+5. Common functional guarantees: persistence, security, confirmation, audit records and other contractual obligations.
+6. Comparison mode: **equal resource budget**, **equal economic budget**, or both, reported separately.
+7. Resources and topology actually used, including required supporting capabilities; enabled optimizations and their conditions.
+8. Instrumentation of process start and completion, preferably independent of the tested implementation, and treatment of failures and incomplete samples.
+9. Raw data, aggregated results, statistical methods, variability, repetitions, warm-up conditions and limitations.
+
+Each implementation **MAY** choose its architecture, tune its mechanisms and exploit its optimizations. An optimization that breaches the contract, weakens required guarantees or transfers hidden work outside the disclosed measurement boundary **MUST** invalidate the comparison as evidence of functionally equivalent solutions. Genuine performance or consumption benefits **MUST NOT** be removed through normalizations designed to neutralize technological differences.
+
+### 14.4. Minimum Experimental Profiles
+
+Product-independent scenarios are proposed:
+
+1. **Prequalification:** complete functional verification of the contract and its effects.
+2. **Baseline:** sustained low load with external E2E instrumentation.
+3. **Sustained operation:** representative distribution of transactions, sizes and concurrency.
+4. **Bursts:** sudden increases in load and queue evolution until draining.
+5. **Scalability:** gradual changes in workload and/or resource budget, reporting E2E and conforming operations.
+6. **Failure and recovery:** controlled interruptions, restart, retries and confirmation of pending outcomes, according to the contract.
+7. **Practical portability:** realization of the same definition in an alternative implementation and measurement of required human effort.
+
+Profiles **MUST** compare the same obligations and restrictions. Numerical values for sizes, durations and loads must be agreed and published before a benchmark is executed, not adjusted retrospectively to favor a result.
+
+### 14.5. Reporting for Adoption and Migration Decisions
+
+A published assessment **SHOULD** provide a machine-readable artifact and an understandable summary for those responsible for purchasing, maintaining or migrating integration systems. Without relying on marketing inferences, the report should answer:
+
+- Can this implementation satisfy **the entire** functional contract?
+- How long does each complete outcome take end to end?
+- How many conforming operations can it sustain, and at what CPU/RAM consumption?
+- How does it behave under load, bursts and failures?
+- What is its cost per conforming functional result?
+- How much actual work is needed to migrate the definition?
+
+A comparison may illustrate tradeoffs among performance, resources, cost and recoverability. It **must not** hide architectural differences or treat as equivalent a solution that sacrificed required functional obligations. The expected market benefit — reduced dependence, improved transparency and competitive pressure to improve — is an **impact hypothesis to be measured**, not a guarantee of adoption.
+
+### 14.6. Independence and Auditability
+
+A declaration of conformance or benchmark report **MUST** rely on reproducible evidence; a commercial claim alone is insufficient. Institutional affiliation, sponsorship or fees for testing **MUST NOT** change the technical evaluation criteria. When sensitive data prevents publication of original samples, representative synthetic material, aggregated results and auditable procedures **SHOULD** be provided. An open package of contracts, test cases, load generators and a common report format is proposed.
+
+## 15. Portability of Existing Interfaces
+
+The migration objective requires considering the following conceptual process:
+
+1. Inspect the existing implementation and its dependencies.
+2. Extract or reconstruct its portable functional definition.
+3. Identify unrepresented operations, effects and assumptions.
+4. Compare the definition with the destination engine's capabilities.
+5. Realize the target implementation using native mechanisms.
+6. Run conformance tests and declare results, limitations and differences.
+
+Automatic extraction from existing products is a desirable ecosystem-tool capability; it is not assumed that every engine can currently export its semantics completely.
+
+## 16. Security Considerations
+
+A portable PFD must not carry operational secrets as part of its functional definition. Credentials, authorization, local policies and site-specific addresses should be resolved through deployment bindings, while explicitly preserving the required permissions and effects.
+
+Malicious inputs, untrusted external dependencies, excessive privileges, data leakage in test cases, custom code and accidental effects during migration and benchmarking must be considered. Conformance tests should be executable in controlled environments so that production systems are not unintentionally modified.
+
+## 17. Prior Work and Position Relative to the State of the Art
+
+Prior work must not be assumed insufficient by definition; it must be formally assessed before any claim of novelty:
+
+| Initiative | Relevant contribution | Question for PIIS |
+|---|---|---|
+| WfMC XPDL | Exchange of process models and preservation of tool extensions | What executable functional semantics can actually be exchanged? |
+| OMG BPMN 2.0.2 | Modeling and execution semantics; different conformance classes | How can nominal conformance without functional portability be avoided? |
+| OMG Model Driven Architecture (MDA) | PIM/PSM separation, platform-independent functionality and specific realization | What does PIIS add for concrete ESB interfaces, observable equivalence and measured migration? |
+| OASIS WS-BPEL 2.0 | Executable processes with defined semantics | What does it cover, and what is limited by its historical orientation toward web services? |
+| OASIS SCA | Component composition and separation of implementations | Which parts of an assembly are portable between concrete ESB platforms? |
+| Publicly documented integration patterns | Taxonomy of recurring integration functions | Which concepts can be formalized as verifiable semantic primitives without defining another platform? |
+| CNCF Open Workflow Specification | Neutral DSL, runtimes and Conformance Test Kit | How far does its contractual behavior for interfaces extend, and what can be adopted directly? |
+| AsyncAPI | Contracts for asynchronous operations and channels | Which descriptions can be referenced without duplication? |
+
+**Academic evidence:** studies of BPMN conformance have identified partial support and differences between engines. These findings support the need to evaluate actual execution rather than merely the ability to read a format. They are historical results and do not automatically characterize today's market.
+
+## 18. Proposed Initial Validation
+
+The proof of concept will use a **real interface** with an origin, validation, transformation, external enrichment, routing decision, two destinations, exception handling and at least one custom function.
+
+Deliverables:
+
+1. Complete inventory of behavior and observable effects of the original interface.
+2. Initial vendor-independent PFD.
+3. Conformance contract and reproducible cases.
+4. Native implementations in at least two different engines.
+5. Conformance report for both implementations.
+6. Comparative end-to-end and resource benchmark **only if both pass the required conformance assessment**.
+7. Record of non-portable elements, causes and design decisions.
+
+**Success criterion:** both implementations satisfy the same observable functional contract without sharing code or internal technology. The manual effort needed to realize the second implementation must be measured separately, because the **actual reduction in migration effort** is also a hypothesis to be demonstrated. The trial will produce the complete Section 14 report, prioritizing E2E outcomes without excluding delays originating within the solution. Speed and cost will be evaluated separately from functional conformance unless an observable deadline forms part of the contract.
+
