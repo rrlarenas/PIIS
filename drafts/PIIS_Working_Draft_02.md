@@ -2,6 +2,8 @@
 
 **Working Draft 02 — Documento de discusión técnica**  
 **Fecha:** 28 de octubre de 2026  
+**Autor y proponente:** Rodrigo Larenas  
+**Licencia:** Creative Commons Attribution 4.0 International (CC BY 4.0)  
 **Estado:** Propuesta exploratoria; no es un RFC publicado ni un Internet-Draft registrado  
 **Idioma de trabajo:** español  
 **Nombre y sigla:** provisionales  
