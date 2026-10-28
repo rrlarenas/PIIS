@@ -35,4 +35,4 @@ El proyecto busca portabilidad funcional, conformidad verificable y comparación
 Rodrigo Larenas (2026). *PIIS — Portable Integration Interface Specification, Working Draft 02*. CC BY 4.0.  
 Repository: https://github.com/rrlarenas/PIIS
 
-An archival DOI will be added only after Zenodo has successfully ingested the published release.
+The repository owner supplied the Zenodo DOI for this publication: [10.5281/zenodo.23748842](https://doi.org/10.5281/zenodo.23748842). This reference was added to the repository's documentation after the tagged GitHub release; the archival snapshot remains unchanged.
