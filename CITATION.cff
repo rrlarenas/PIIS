@@ -1,10 +1,12 @@
 cff-version: 1.2.0
-message: "Please cite this working draft using the metadata below; use the archival DOI once the Zenodo record is available."
+message: "If you use or refer to PIIS Working Draft 02, please cite the archived release using its DOI."
 title: "PIIS — Portable Integration Interface Specification: Working Draft 02"
 authors:
   - family-names: "Larenas"
     given-names: "Rodrigo"
 version: "draft-02"
+doi: 10.5281/zenodo.23748842
+date-released: 2026-10-28
 url: "https://github.com/rrlarenas/PIIS"
 license: "CC-BY-4.0"
 abstract: >-
