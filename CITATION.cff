@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this working draft using the metadata below; use the archival DOI once the Zenodo record is available."
+title: "PIIS — Portable Integration Interface Specification: Working Draft 02"
+authors:
+  - family-names: "Larenas"
+    given-names: "Rodrigo"
+version: "draft-02"
+url: "https://github.com/rrlarenas/PIIS"
+license: "CC-BY-4.0"
+abstract: >-
+  An exploratory, vendor-neutral proposal for portable functional definitions
+  of integration interfaces, observable contracts, conformance assessment
+  and independent outcome-driven comparative evaluation. Includes Spanish
+  reference text and a complete English translation.
+keywords:
+  - integration interfaces
+  - functional portability
+  - interoperability
+  - conformance
+  - end-to-end benchmarks
