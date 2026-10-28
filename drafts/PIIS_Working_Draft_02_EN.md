@@ -2,6 +2,8 @@
 
 **Working Draft 02 — Technical Discussion Document**  
 **Date:** October 28, 2026  
+**Author and original proponent:** Rodrigo Larenas  
+**License:** Creative Commons Attribution 4.0 International (CC BY 4.0)  
 **Status:** Exploratory proposal; neither a published RFC nor a registered Internet-Draft  
 **Working language:** Spanish (original reference text); English (complete translation)  
 **Name and acronym:** Provisional  
