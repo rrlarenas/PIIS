@@ -391,3 +391,103 @@ Deliverables:
 
 **Success criterion:** both implementations satisfy the same observable functional contract without sharing code or internal technology. The manual effort needed to realize the second implementation must be measured separately, because the **actual reduction in migration effort** is also a hypothesis to be demonstrated. The trial will produce the complete Section 14 report, prioritizing E2E outcomes without excluding delays originating within the solution. Speed and cost will be evaluated separately from functional conformance unless an observable deadline forms part of the contract.
 
+## 19. Open Questions to Resolve Before a Normative Version
+
+1. What minimum set of primitives is sufficient without sacrificing expressiveness?
+2. How can transformations, conditions and queries be expressed interpretably without creating an excessively broad language?
+3. What belongs in the PFD, and what belongs in deployment?
+4. What is the minimum formal model of observability and equivalence?
+5. How should external effects, state and nondeterminism be declared and tested?
+6. How can custom logic be ported without concealing proprietary dependencies?
+7. Which capability profiles are useful without fragmenting conformance into vendor dialects?
+8. To what extent do BPMN, BPEL, SCA or Open Workflow already solve this problem and offer a suitable foundation?
+9. How should improvements in migration effort, duration and risk be measured alongside functional compliance?
+10. Which standardization forum and community process is appropriate?
+11. How can the complete E2E path be instrumented from common observable boundaries, with equivalent external conditions, without subtracting architectural advantages or penalties?
+12. What workload profiles allow different implementations to be compared without favoring one architectural style?
+13. What minimum evidence should a provider deliver to substantiate a plug-and-play claim?
+
+## 20. Proposed Work Plan
+
+**Phase A — State of the art and scope:** critical comparison of prior work, identification of a demonstrable gap and definition of the portable unit.
+
+**Phase B — Model and semantics:** inventory of primitives based on real interfaces and an initial model of observability.
+
+**Phase C — Representation:** JSON interchange schema, YAML profile and structural validators.
+
+**Phase D — Conformance:** test contracts, evidence, coverage and result states.
+
+**Phase E — Cross-engine trial:** independent implementation, verification and measurement of migration effort.
+
+**Phase F — Reproducible benchmark:** publish workload definitions, complete end-to-end measurements, resource usage across the solution, functional outcomes and actual migration effort in an open evaluation profile.
+
+**Phase G — External review:** review by specialists, authors of existing standards and providers before choosing a formal submission forum.
+
+## 21. Long-Term Vision and Expected Effects
+
+**Market principle:** PIIS does not neutralize technological advantages or disadvantages. It makes them measurable. Its ambition is to move decisions away from historical platform dependence and toward functional and operational evidence available to users. A technology that delivers the same complete result in less time, using fewer resources or at lower cost, has demonstrated that advantage under the tested conditions. The standard seeks to make choice and migration depend on such evidence rather than on the difficulty of rebuilding interfaces.
+
+### 21.1. Plug-and-Play as a Target State
+
+PIIS envisions an institution being able to transfer an interface's functional definition to another conforming engine, explicitly bind its deployment dependencies, and automatically verify that no functionality was lost. The ultimate objective is to minimize the intervention required to change platforms, reducing it to declarative, verifiable tasks wherever feasible.
+
+The **portability contract** must not be confused with a promise of instantaneous migration: permissions, connections, credentials, topology, non-portable custom components and characteristics of the target environment may require adaptation. Progress toward plug-and-play depends on a sufficiently expressive profile, full capability coverage and interoperable import/export tools. It must be a measurable achievement, not a marketing label.
+
+### 21.2. Transparent Competition and Reduced Lock-In
+
+PIIS aims to reduce functional **vendor lock-in** through portable definitions, contracts and evidence controlled by their owners and realizable in alternative implementations. No provider must disclose internal intellectual property to demonstrate conformance or performance; comparisons rely on externally verifiable outcomes. Potential reductions in costs, increased innovation and a more dynamic market are treated as **impact hypotheses** subject to observation and assessment. The standard must not favor products or impose implementation techniques.
+
+## 22. Standards Body Selection and Submission Strategy
+
+The choice of an organization remains open. Suitability will depend on PIIS's actual scope, participation by interested providers and intellectual-property requirements.
+
+| Forum | Established strengths | Principal reservation |
+|---|---|---|
+| **IETF** | Internet-Draft process, public discussion and established reproducible benchmarking methodologies; participation without mandatory membership | Its mission focuses on Internet technologies; a general process/ESB semantics model may fall outside its natural scope. |
+| **IHE International** | **Nonprofit** organization, experience with integration profiles, Connectathon and interoperability testing; publicly available technical frameworks | Its focus is healthcare interoperability while PIIS aims to be cross-industry; it charges membership fees and fees for certain testing services. |
+| **OASIS Open** | Formal specification committee processes and historical work on BPEL and SCA | Requires investigation of an interested committee, membership conditions and IPR policies. |
+| **OMG** | Cross-industry specifications and the **Model Driven Architecture (MDA)** precedent: separation between Platform Independent Models (PIM) and Platform Specific Models (PSM) | PIIS must be clearly distinguished from MDA and existing OMG specifications; governance is membership-based. |
+
+**Working recommendation:** do not select a formal body yet. First publish the technical draft and its prior-work comparison, begin open review, achieve at least two independent implementations of a PFD, and consult IETF, OASIS, OMG and IHE early. IHE may be a sectoral ally for a clinical pilot without restricting PIIS to healthcare.
+
+**Priority precedent:** OMG MDA. Its PIM/PSM framework already formalizes the separation between platform-independent functionality and implementation-specific realization. Any novelty in PIIS must arise from semantics of concrete integration interfaces, observable effects, cross-engine conformance and operational portability — not from claiming to invent platform independence.
+
+## 23. References
+
+### Portability and Execution Precedents
+
+- WfMC, *XPDL*. https://wfmc.org/xpdl/
+- WfMC, *Public Documents / Process Definition Interchange*. https://wfmc.org/public-documents/
+- OMG, *Business Process Model and Notation 2.0.2*. https://www.omg.org/spec/BPMN/
+- OASIS, *WS-BPEL 2.0*. https://docs.oasis-open.org/wsbpel/2.0/process/executable/index.html
+- OASIS Open CSA, *Service Component Architecture*. https://www.oasis-opencsa.org/sca.html
+- CNCF, *Open Workflow Specification*. https://github.com/open-workflow-specification/specification
+- AsyncAPI, *Adding Operations*. https://www.asyncapi.com/docs/concepts/asyncapi-document/adding-operations
+- *BPMN Conformance in Open Source Engines* (2015). https://fis.uni-bamberg.de/entities/publication/546a51ef-9699-4e66-8c94-c64437bc0c1b
+- *BPMN 2.0: The State of Support and Implementation* (2018). https://www.sciencedirect.com/science/article/pii/S0167739X17300250
+
+### Benchmarking and Standardization Forums
+
+- IETF, *Bringing New Work to the IETF*. https://www.ietf.org/process/new-work/
+- IETF, *Guide to the IETF Standards Process*. https://www.ietf.org/process/process/
+- IETF, RFC 9411, *Benchmarking Methodology for Network Security Device Performance*. https://www.rfc-editor.org/rfc/rfc9411.html
+- IETF, *Benchmarking Methodology Working Group (BMWG)*. https://datatracker.ietf.org/wg/bmwg/charter/
+- IHE International, *Governance*. https://www.ihe.net/about_ihe/governance/
+- IHE International, *Membership*. https://www.ihe.net/membership/
+- IHE International, *IHE Process*. https://www.ihe.net/about_ihe/ihe_process/
+- OASIS, *Technical Committee Handbook*. https://docs.oasis-open.org/TChandbook/TChandbookIndex.html
+- OMG, *Model Driven Architecture FAQ*. https://www.omg.org/mda/faq_mda.htm
+- OMG, *Mission & Vision*. https://www.omg.org/about/
+
+### Representation and Normative Language
+
+- RFC 8259, *JSON Data Interchange Format*. https://www.rfc-editor.org/rfc/rfc8259.html
+- RFC 8785, *JSON Canonicalization Scheme*. https://www.rfc-editor.org/rfc/rfc8785.html
+- JSON Schema, *Specification*. https://json-schema.org/specification
+- YAML, *Specification 1.2.2*. https://yaml.org/spec/1.2.2/index.html
+- RFC 2119 and RFC 8174, *BCP 14*. https://www.rfc-editor.org/info/bcp14/
+- RFC Editor, *How RFCs Are Created*. https://www.rfc-editor.org/authors/rfc-how-to/
+
+---
+
+**Final note:** PIIS is a working name. This draft establishes the agreed principles, strengthens evaluation of complete outcomes and keeps open design questions unresolved. It does not claim to have already demonstrated full portability or universal equivalence between specific products.
