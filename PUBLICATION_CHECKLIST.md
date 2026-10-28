@@ -15,14 +15,15 @@
 
 ## Awaiting account-side actions
 
-- [ ] Connect GitHub account in Zenodo and enable **rrlarenas/PIIS** in https://zenodo.org/account/settings/github/
+- [x] Connect GitHub account in Zenodo and enable **rrlarenas/PIIS** in https://zenodo.org/account/settings/github/ (confirmed by repository owner)
 - [x] **After** Zenodo is enabled, create and publish a GitHub release from the latest `main`:
   - Tag: `draft-02`
   - Title: `PIIS Working Draft 02 — Public Review (ES/EN)`
   - Description: copy `RELEASE_NOTES_DRAFT_02.md`
   - Publish as a **normal GitHub release** (not marked pre-release) so that Zenodo can archive it. The label **Working Draft** explicitly communicates its exploratory status.
-- [ ] Verify Zenodo successfully archives the release, and confirm its actual DOI (do not infer it)
-- [ ] Add verified DOI badge and citation to README and metadata
+- [x] Record the Zenodo DOI supplied by the repository owner: [10.5281/zenodo.23748842](https://doi.org/10.5281/zenodo.23748842)
+- [ ] Independently verify Zenodo record metadata matches this specific tagged release (external lookup was not accessible)
+- [x] Add the reported DOI badge and citation to README and `CITATION.cff`
 - [ ] Begin structured external technical review, including the prior-work gap analysis
 - [ ] Review standards-body IPR requirements before any formal committee submission
 
@@ -32,4 +33,4 @@
 
 ## Verified GitHub publication
 
-Published at https://github.com/rrlarenas/PIIS/releases/tag/draft-02 on 28 October 2026. The release creation workflow completed successfully. Zenodo archival status and DOI are pending independent verification.
+Published at https://github.com/rrlarenas/PIIS/releases/tag/draft-02 on 28 October 2026. The release creation workflow completed successfully. The repository owner supplied DOI [10.5281/zenodo.23748842](https://doi.org/10.5281/zenodo.23748842); independent cross-check of the remote record's metadata remains pending.
