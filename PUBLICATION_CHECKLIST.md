@@ -20,7 +20,7 @@
   - Tag: `draft-02`
   - Title: `PIIS Working Draft 02 — Public Review (ES/EN)`
   - Description: copy `RELEASE_NOTES_DRAFT_02.md`
-  - Mark as a **pre-release** (exploratory working draft)
+  - Publish as a **normal GitHub release** (not marked pre-release) so that Zenodo can archive it. The label **Working Draft** explicitly communicates its exploratory status.
 - [ ] Verify Zenodo successfully archives the release, and confirm its actual DOI (do not infer it)
 - [ ] Add verified DOI badge and citation to README and metadata
 - [ ] Begin structured external technical review, including the prior-work gap analysis
