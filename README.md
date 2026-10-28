@@ -1,35 +1,150 @@
 # PIIS — Portable Integration Interface Specification
 
-**Working Draft 02 · Open Technical Discussion · 28 October 2026**
+**Working Draft 02 | Public technical review | 28 October 2026**
 
-> Innovation should be a reason to choose a technology, never a reason to become locked into it.
+**Author and original proponent:** Rodrigo Larenas  
+**License:** [Creative Commons Attribution 4.0 International](LICENSE.md) (CC BY 4.0)  
+**Status:** Exploratory proposal. **Not an approved standard, IETF Internet-Draft, or published RFC.**
 
-PIIS proposes a portable functional definition for integration interfaces, allowing different implementations to preserve **the observable behavior, functional outcomes and external effects** specified by a common contract.
+> **Innovation should be a reason to choose a technology, never a reason to become locked into it.**
 
-Implementations remain free to use their own algorithms, architectures and internal components. PIIS seeks to reduce vendor lock-in and enable transparent, outcome-based comparison of conforming integration engines.
+## Read PIIS
 
-## Read the specification
+| Resource | Language | Status |
+| --- | --- | --- |
+| [Complete Working Draft 02](drafts/PIIS_Working_Draft_02.md) | Spanish | Original reference text |
+| [Complete Working Draft 02 — English](drafts/PIIS_Working_Draft_02_EN.md) | English | Full translation for international review |
+| [English overview](docs/OVERVIEW_EN.md) | English | Informative short summary |
+| [Conformance and benchmark notes](docs/CONFORMANCE_AND_BENCHMARKS.md) | English | Preliminary methodology |
+| [Research and prior work](docs/PRIOR_WORK.md) | English | Comparison agenda |
+| [Contributing](CONTRIBUTING.md) | English | Review and contribution rules |
+| [Citation metadata](CITATION.cff) | English | Attribution and release metadata |
 
-- [Complete Working Draft 02 (Spanish)](drafts/PIIS_Working_Draft_02.md)
-- [English summary](docs/OVERVIEW_EN.md)
-- [Conformance and evaluation](docs/CONFORMANCE_AND_BENCHMARKS.md)
-- [Related work](docs/PRIOR_WORK.md)
-- [How to contribute](CONTRIBUTING.md)
+The Spanish draft is the original reference; the English text is a translation for international technical review. No alternative text supersedes the original unless explicitly accepted in a subsequent public revision.
 
-## Scope
+## 1. Problem statement
 
-PIIS addresses portable interface definitions, required functionality, behavioral contracts, conformance evidence and independently reproducible evaluation. It **does not change, reinterpret or extend** established standards such as HL7, FHIR, DICOM, X12, HTTP(S) or MQTT.
+Integration systems rely on well-established protocols and data standards. Nevertheless, interfaces often remain bound to an individual platform's internal configuration, programming model, components, and execution paradigm.
 
-The initial canonical representation is proposed as JSON, with YAML as a possible authoring form. Neither is a substitute for formally specified behavior.
+Migrating an interface can require rebuilding validation, transformations, rules, routing, lookups, stateful processing, error handling, and custom functions, even when its functional purpose and expected outcomes do not change.
 
-## Status
+**PIIS addresses portability of the interface's functional definition, not portability of its original code or the standardization of its communication protocols.**
 
-**Exploratory Working Draft — not an adopted standard, an official Internet-Draft, or an RFC.** The Spanish draft is the authoritative current working text. This repository invites discussion; it does not assert that the proposed portability mechanism has been demonstrated.
+## 2. The PIIS proposal
 
-## Author and license
+PIIS explores a **Portable Functional Definition (PFD)** describing an interface's operations, dependencies, relations and rules, together with an **Observable Contract (OC)** specifying externally verifiable behavior, outcomes, exceptions and side effects.
 
-**Rodrigo Larenas** — original proponent and author.
+Independent integration engines may interpret the same portable definition using **completely different internal mechanisms**.
 
-Documentation and specification text: [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE.md).
+> **Different implementations. One functional contract. Verifiable outcomes.**
 
-The license does not imply an affiliation with, sponsorship by or endorsement from any organization or manufacturer. Licensing terms for any future implementation code will be determined separately.
+An interface must not be described only by a list of test inputs and outputs: the definition needs sufficient functional meaning to support independent realization. Tests and conformance evidence then assess whether the realization meets its obligations.
+
+### Conceptual model
+
+| Concern | PIIS responsibility |
+| --- | --- |
+| Source / Destination | Logical input and output relationships and required results |
+| Channel / Flow | Composition, dependencies, branching, concurrency and observable ordering |
+| Operation / Rule | Validations, conditions and functional decisions |
+| Transformation | Required mappings and data modifications |
+| Custom Function | Portable semantics where possible, otherwise explicit dependencies |
+| External Dependency | Resources, constraints and assumptions material to the contract |
+| Observable Contract | Inputs, preconditions, outcomes, side effects, failures and permitted variations |
+| Conformance Evidence | Reproducible proof of declared functional compatibility |
+
+These are provisional concepts, **not a finalized schema**.
+
+## 3. Non-goals
+
+PIIS **does not redefine, interpret, replace, extend or revise** established standards for communication, data structures, messaging, or transport. Specifications such as HL7, FHIR, DICOM, X12, TCP/IP, HTTP(S), MQTT and MLLP are taken as mature external standards, beyond PIIS's normative scope.
+
+It also does not mandate:
+- a particular integration engine, execution architecture, common runtime, algorithm, programming language or library;
+- exposure of proprietary implementations, source code, commercial secrets or internal telemetry;
+- identical internal behavior, steps, logs, execution paths, or identical performance;
+- automatic migration of arbitrary custom code without a portable functional representation or explicitly declared adaptation.
+
+JSON is a **proposed canonical interchange representation**; YAML is a potential readable authoring format. The choice of a format does not itself define semantics or ensure conformance.
+
+## 4. Conformance is about observable outcomes
+
+A conforming implementation must preserve the obligations of its declared contract, including required outcomes, visible state transitions, error behavior and side effects. It may use entirely different internal algorithms and processing architectures.
+
+An importer or engine must **never silently discard mandatory functionality** while claiming full conformity.
+
+Proposed outcomes for a scoped assessment:
+- **Conformant:** contract obligations met and supported by adequate evidence.
+- **Non-conformant:** a breach of the declared contract was observed.
+- **Not demonstrated:** evidence or required semantic coverage is insufficient.
+
+A finite test suite alone does not prove universal equivalence for arbitrary programs. Conformance claims must state their scope, assumptions, version and evidence.
+
+## 5. Independent performance evaluation
+
+The first obligation is functional equivalence; **performance comparison is a separate evaluation**.
+
+Once implementations meet the same functional contract, customers should be able to compare solutions on measurable results using reproducible workloads and disclosed test conditions.
+
+| Measure | Intended comparison |
+| --- | --- |
+| **Complete end-to-end time** | Elapsed time from defined input stimulus to completion of the *entire* contracted observable result |
+| P50 / P95 / P99 | Distribution of contracted end-to-end completion times |
+| Conforming throughput | Correct results completed per second |
+| CPU and RAM | Resource use for the evaluated solution |
+| Scalability | Behavior at increasing loads and concurrency |
+| Recovery | Time to restore required behavior after failure |
+| Functional integrity | Missing, duplicated or incorrect contractual effects |
+| Operational cost | Cost of delivering the required behavior |
+| Migration effort | Measured work to reproduce and verify a portable interface |
+
+**Do not subtract internal queueing, persistence, scheduling or other architecture-driven overhead from the primary end-to-end measurement.** These are meaningful technology advantages or disadvantages. Fair comparison requires equivalent external conditions and declared resource budgets, not identical internal implementation.
+
+A solution may outperform another for a specific workload without being universally superior.
+
+## 6. Strategic goals
+
+PIIS seeks to:
+1. Return control of functional interface definitions to their owners.
+2. Reduce functional vendor lock-in and inherited migration barriers.
+3. Let implementers compete transparently on measured outcomes and differentiated capabilities.
+4. Progress toward **plug-and-play-like migration** between fully conforming implementations, while explicitly recognizing necessary configuration, environment and unresolved custom logic.
+5. Avoid a new vendor-specific or implementation-specific portability dialect.
+
+Plug-and-play is a **long-term objective to be demonstrated**, not an existing PIIS capability.
+
+## 7. Background and adjacent standards
+
+PIIS begins with a critical review of prior work, especially WfMC/XPDL, WS-BPEL, BPMN, OASIS SCA, OMG Model Driven Architecture, CNCF Open Workflow Specification, and Enterprise Integration Patterns.
+
+The independence-of-platform concept is not novel by itself. PIIS's proposed contribution requires a **demonstrable gap** in functional migration, observable conformance, and objective implementation evaluation. See [the prior-work research agenda](docs/PRIOR_WORK.md).
+
+## 8. Roadmap
+
+| Phase | Outcome |
+| --- | --- |
+| A — State of the art | Identify exactly what the existing standards do and do not cover |
+| B — Functional semantics | Define minimal portable operations and observable contracts from real interfaces |
+| C — Representation | Specify versioned JSON representation; evaluate YAML authoring |
+| D — Conformance | Define evidence, capabilities, test profiles and compatibility states |
+| E — Interoperability trial | Materialize one functional definition in two independent implementations |
+| F — Comparative benchmark | Measure complete end-to-end outcomes and total migration effort |
+| G — Open review and standards engagement | Invite critical external review; assess suitable standards-development organizations |
+
+## 9. Participate
+
+Open a [GitHub Issue](https://github.com/rrlarenas/PIIS/issues) to critique a definition, identify overlap with earlier work, propose an independently verifiable scenario, or challenge the core portability hypothesis. Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting text.
+
+Constructive critical feedback is welcome. A concrete counterexample is more valuable than an unsupported endorsement.
+
+## 10. Publication and attribution
+
+**Rodrigo Larenas** — author and original proponent, 2026.
+
+The original PIIS documentation and specification text in this repository are licensed under [CC BY 4.0](LICENSE.md). Future implementation source code, if any, may use a separate license.
+
+- **Citation:** see [CITATION.cff](CITATION.cff).
+- **Publication workflow:** [PUBLICATION_CHECKLIST.md](PUBLICATION_CHECKLIST.md).
+- **Archival DOI:** pending a GitHub release and Zenodo deposit; **no DOI is asserted yet**.
+
+This independent proposal does not assert institutional endorsement or an official standardization status.
