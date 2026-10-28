@@ -171,3 +171,122 @@ The candidate catalog includes receive, emit, parse, validate, transform, enrich
 
 A source or destination may identify an external type (TCP, file, database, queue, MQTT, HTTP, etc.) and reference its pre-existing contract. PIIS models only the interface's **functional relationship** with that resource; it does not define the protocol's technical specification.
 
+## 9. Observable-Behavior Contract
+
+A contract may declare, where applicable:
+
+- **Inputs:** types, acceptance conditions and functional preconditions.
+- **Outcomes:** required outputs and constraints on their content.
+- **External effects:** observable writes, publications, invocations or modifications.
+- **Decisions:** conditions determining destinations or possible outcomes.
+- **Failures:** required effects and outcomes for errors within the contract's assumptions.
+- **State:** persistent changes or dependencies across invocations when functionally meaningful.
+- **Ordering and timing:** only the observable constraints expressly required by the contract.
+- **Permitted variation:** valid differences, tolerances or nondeterministic values that do not constitute nonconformance.
+- **Forbidden effects:** actions that must not occur under the declared conditions.
+
+Equivalence **does not require byte-for-byte equality** if the contract permits different representations. Conversely, exact equality must be required where it is an explicit obligation.
+
+Evaluation must distinguish implementation differences from functional nonconformance. The standard does not redefine external ACK, transaction or transport rules; it only allows reference to obligations relevant to the interface.
+
+## 10. Representation and Interchange
+
+The proposal is to use:
+
+- **JSON** as PIIS's canonical interchange format.
+- **YAML** as an optional authoring format that can be normalized to the defined JSON model without semantic loss.
+- **JSON Schema** to validate structural representation without confusing schema validation with functional conformance.
+- Explicit versioning and rules for extensions.
+
+Rules governing types, references, ordering, identifiers and extensions will be specified in a future schema version. The use of RFC 8785 will be considered if canonical JSON serialization is required for cryptographic hashes, signatures or unambiguous artifact comparison.
+
+**Proposed rule:** unknown fields that affect required functionality **MUST NOT** be silently ignored. Handling of purely informative extensions may differ and must be specified.
+
+## 11. Custom Functions and Code
+
+Custom logic is a fundamental portability challenge, but does not justify imposing a particular programming language.
+
+PIIS will distinguish:
+
+1. **Functionality expressible through portable primitives:** this may be interpreted through different native mechanisms.
+2. **Functionality represented by an additional portable mechanism:** its semantics, execution and effects must be specified before a claim of conformance is permitted.
+3. **Unrepresented proprietary dependency:** this must be explicitly identified and cannot support a full portability certification while unresolved.
+
+A function's input/output contract alone is insufficient to automatically generate a semantically equivalent implementation. Automatic migration requires an interpretable representation of the logic, a supplied compatible implementation, or explicitly declared adaptation.
+
+This document **does not yet choose** a DSL, expression language, bytecode or execution environment for custom cases. That decision requires separate research.
+
+## 12. Capabilities and Compatibility
+
+An engine **MAY** declare a catalog of supported capabilities, versions and restrictions. Assessment of a particular PFD must check the capability set actually required by the interface.
+
+The distinctions are:
+
+- **Supported:** the requirement can demonstrably be interpreted and realized.
+- **Unsupported:** the requirement cannot be met.
+- **Unverified:** evidence is insufficient to assert equivalence.
+
+Partial compatibility provides useful diagnostic information but **is not equivalent** to conformance with the complete contract.
+
+## 13. Conformance
+
+A declaration of conformance for a specific interface and engine must include at least:
+
+1. **Representation validation:** the artifact is structurally valid.
+2. **Semantic coverage:** every mandatory function has an implementable interpretation; relevant extensions and dependencies are known.
+3. **Behavioral assessment:** outcomes and effects satisfy the contract under reproducible test conditions.
+4. **Evidence and scope:** contract version, engine, adapter where applicable, environment, tests, results and limitations.
+
+Opening a file, importing a route or passing a small set of examples is not sufficient to declare universal conformance.
+
+Tests must cover positive cases, boundary cases, failures, concurrency, state and external effects as appropriate. No finite set of cases is claimed to prove equivalence for arbitrary programs. Guarantees must be limited by defined semantics, assumptions and available evidence.
+
+### 13.1. Result States
+
+- **Conformant:** satisfies all obligations within the declared contract and conformance scope, with adequate evidence under the agreed methodology.
+- **Non-conformant:** a breach of the contract has been observed.
+- **Not demonstrated:** sufficient evidence is unavailable or mandatory functional dependencies remain unresolved.
+
+No result state may be used to represent as conformant an interface that has lost a mandatory function.
+
+## 14. Independent, Outcome-Driven Comparative Evaluation
+
+### 14.1. Principle: Compete on Outcomes, Not Architecture
+
+After conformance to the same contract has been demonstrated, PIIS enables direct comparison across independent implementations. Internal implementation is entirely at the discretion of each engine. The standard **MUST NOT** demand identical algorithms, components, processing patterns or topologies for a valid evaluation.
+
+The **primary operational metric** is **end-to-end (E2E) completion time** for one conforming functional unit of work. It is measured from a defined input stimulus at the shared observable boundary to external confirmation of **all** effects and outcomes required by the contract. An operation is not complete merely because a component received it, queued it or marked it as internally accepted.
+
+Measured time **includes** everything the solution needs to fulfill its function: reception, waiting, queueing, parsing, validation, transformation, routing, writes, invocations, retries and acknowledgments, when part of the behavior under evaluation. None of these times **MAY** be subtracted merely because they arise from a particular architecture. If one implementation completes the same work sooner than another under equal external conditions and functional guarantees, it has demonstrated an objective advantage **in E2E time for that scenario**.
+
+External dependencies must provide **comparable conditions**, not disappear from the measured path. Controlled test services, reproducible responses or equivalent real environments may be used; the chosen method **MUST** be declared. Timing differences caused by an implementation's interactions with those dependencies are part of the total outcome. Internal processing and external service timings **MAY** be recorded for diagnosis without changing the observed E2E figure.
+
+A comparison may identify different advantages depending on the metric; PIIS **MUST NOT** proclaim a universal winner based on a single test. No general speed minima are imposed as conformance requirements unless the functional contract specifies observable time limits.
+
+### 14.2. Reference Metrics
+
+The following catalog is a **proposed initial profile**. Statistical details and procedures will be specified in later test specifications.
+
+| Proposed identifier | Metric | What it measures | Minimum report |
+|---|---|---|---|
+| `e2e_completion_time` | **End-to-end time (primary)** | Total duration of the complete functional result, from common input to confirmation of the last mandatory effect | ms; P50, P95 and P99; counts of complete and incomplete operations |
+| `conformant_throughput` | **Conforming throughput** | Operations per second that fully satisfy the contract | ops/s, sustained window, workload and success percentage |
+| `cpu_consumption` | **CPU consumption** | Processing resources used by the entire evaluated solution | Average/peak CPU, available cores and CPU-ms per conforming operation |
+| `memory_consumption` | **RAM consumption** | Memory used by all components necessary for the evaluated operation | MB or GB; steady-state and peak memory |
+| `scalability` | **Scalability** | E2E, throughput and resource behavior as load or concurrency changes | Curves by load level and observed limits |
+| `recovery_time` | **Recovery** | Time from controlled failure until required functional effects are restored | Seconds; pending, lost and duplicate work |
+| `functional_integrity` | **Functional integrity** | Correct and incorrect results, losses, duplicates and prohibited effects | Counts, rates and failure classification |
+| `operational_cost` | **Operational cost** | Cost of executing a conforming volume of work under a declared scenario | Cost per period and conforming operation; assumptions |
+| `migration_effort` | **Migration effort** | Intervention required to materialize and validate an existing definition on another implementation | Person-hours, manual and automated tasks, blockers |
+| `internal_diagnostics` | Internal diagnostics (optional) | Partial timings, waits and other explanatory measures | Breakdown and method, **without subtracting from E2E** |
+
+**Accounting rules:**
+
+1. The report **MUST** identify the starting instant, completion criterion and set of contractual mandatory effects for each class of operation.
+2. E2E time **MUST** encompass the complete functional path under common test conditions; no queueing delay or internal waiting may be excluded on architectural grounds.
+3. An incomplete, timed-out or non-conforming operation **MUST NOT** count as a success or disappear from the result set. It must be reported separately, with statistical treatment specified to prevent bias from excluding slow operations.
+4. Throughput **MUST** count only completed conforming operations; accepting an input is not functional completion.
+5. CPU and RAM **MUST** cover the full set of components needed to satisfy the contract. Measurement boundaries and resource aggregation **MUST** be disclosed.
+6. Cost **MUST** be related to conforming work and disclose assumptions about infrastructure, operations, licensing, consumption and time horizon. It is not a measure of conformance.
+7. Internal diagnostic metrics **MAY** explain causes but **MUST NOT** justify an E2E classification different from the one actually measured.
+
