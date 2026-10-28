@@ -137,6 +137,12 @@ Open a [GitHub Issue](https://github.com/rrlarenas/PIIS/issues) to critique a de
 
 Constructive critical feedback is welcome. A concrete counterexample is more valuable than an unsupported endorsement.
 
+## Working Draft 02 publication
+
+**[PIIS Working Draft 02 — Public Review (ES/EN): official GitHub release](https://github.com/rrlarenas/PIIS/releases/tag/draft-02)**
+
+This is a formally versioned *public working draft* release, **not** an adopted specification, IETF RFC, or certified implementation. Its archival DOI will be added after verification of the Zenodo deposit.
+
 ## 10. Publication and attribution
 
 **Rodrigo Larenas** — author and original proponent, 2026.
