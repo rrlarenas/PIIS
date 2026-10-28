@@ -22,6 +22,17 @@
 
 The Spanish draft is the original reference; the English text is a translation for international technical review. No alternative text supersedes the original unless explicitly accepted in a subsequent public revision.
 
+## Open international technical review
+
+**The Working Draft 02 is archived and unchanged.** New research is recorded separately so objections and proposed revisions remain traceable.
+
+- **[Prior Art and Gap Assessment 01](research/PRIOR_ART_AND_GAP_ASSESSMENT_01.md)** — requirement-by-requirement comparison with earlier standards, explicit unknowns, and falsifiable experiments.
+- **[Review #1: Prior art and possible duplication](https://github.com/rrlarenas/PIIS/issues/1)** — challenge the novelty claim; reuse or extend existing standards where possible.
+- **[Review #2: Minimal portable functional model](https://github.com/rrlarenas/PIIS/issues/2)** — define sufficient functional semantics and observable contracts without prescribing internal execution.
+- **[Review #3: Complete E2E comparison](https://github.com/rrlarenas/PIIS/issues/3)** — compare only conforming implementations, including all architecture-dependent time and resources.
+
+**Review invitation:** Please cite an exact specification version and normative section, propose a reproducible counterexample, or share independent conformance evidence. Demonstrating that an existing standard already solves part or all of PIIS's problem is a valuable contribution.
+
 ## 1. Problem statement
 
 Integration systems rely on well-established protocols and data standards. Nevertheless, interfaces often remain bound to an individual platform's internal configuration, programming model, components, and execution paradigm.
