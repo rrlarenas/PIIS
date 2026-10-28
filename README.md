@@ -141,7 +141,11 @@ Constructive critical feedback is welcome. A concrete counterexample is more val
 
 **[PIIS Working Draft 02 — Public Review (ES/EN): official GitHub release](https://github.com/rrlarenas/PIIS/releases/tag/draft-02)**
 
-This is a formally versioned *public working draft* release, **not** an adopted specification, IETF RFC, or certified implementation. Its archival DOI will be added after verification of the Zenodo deposit.
+This is a formally versioned *public working draft* release, **not** an adopted specification, IETF RFC, or certified implementation.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23748842.svg)](https://doi.org/10.5281/zenodo.23748842)
+
+**Zenodo DOI for Working Draft 02:** [10.5281/zenodo.23748842](https://doi.org/10.5281/zenodo.23748842).
 
 ## 10. Publication and attribution
 
@@ -151,6 +155,6 @@ The original PIIS documentation and specification text in this repository are li
 
 - **Citation:** see [CITATION.cff](CITATION.cff).
 - **Publication workflow:** [PUBLICATION_CHECKLIST.md](PUBLICATION_CHECKLIST.md).
-- **Archival DOI:** pending a GitHub release and Zenodo deposit; **no DOI is asserted yet**.
+- **Archival DOI for Working Draft 02:** [10.5281/zenodo.23748842](https://doi.org/10.5281/zenodo.23748842).
 
 This independent proposal does not assert institutional endorsement or an official standardization status.
