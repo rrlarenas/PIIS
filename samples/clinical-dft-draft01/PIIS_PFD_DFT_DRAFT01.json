@@ -1,0 +1,645 @@
+{
+  "piis_document": {
+    "kind": "PortableFunctionalDefinition",
+    "working_profile": "PIIS-case-study/0.1-exploratory",
+    "schema_status": "PROPOSED_NOT_STANDARDIZED",
+    "semantic_status": "PARTIAL_REDACTED",
+    "conformance_status": "NOT_DEMONSTRATED",
+    "language": "es",
+    "source_of_truth": "extracts_from_supplied_configurations_not_execution_evidence"
+  },
+  "Identity": {
+    "id": "PIIS-CASE-DFT-001",
+    "title": "Canal de integración para transacciones financieras clínicas",
+    "version": "draft-01",
+    "normative": false,
+    "anonymized": true,
+    "workload_executed": false
+  },
+  "ExternalStandards": {
+    "status": "EXTERNAL_OUT_OF_SCOPE",
+    "accepted_as_is": [
+      "HL7 v2",
+      "MLLP",
+      "TCP"
+    ],
+    "observed_message_family": "DFT",
+    "converted_model_declared_doc_type": "HL7 v2.3 DFT_P03",
+    "original_message_version_verified": false,
+    "redefines_existing_standards": false
+  },
+  "Source": {
+    "id": "S01",
+    "kind": "inbound_message",
+    "protocol": "TCP",
+    "framing": "MLLP",
+    "payload_format": "HL7_v2",
+    "endpoint_binding": "PRIVATE:SOURCE_ENDPOINT",
+    "encoding_observed_original": "ISO-8859-1",
+    "source_response_observed_original": "auto-generated_before_processing",
+    "target_response_equivalence": "UNVERIFIED",
+    "ports_ips_hosts_credentials_included": false
+  },
+  "Rule": {
+    "inbound_acceptance": {
+      "all": [
+        {
+          "path": "MSH.9.1",
+          "op": "equals",
+          "value": "DFT"
+        },
+        {
+          "path": "FT1.7.1",
+          "op": "not_equals",
+          "valueRef": "PRIVATE:EXCLUDED_SERVICE_MARKER"
+        },
+        {
+          "op": "not",
+          "condition": {
+            "all": [
+              {
+                "path": "FT1.7.1",
+                "op": "contains_hyphen_at_index_gt_zero"
+              },
+              {
+                "path": "PV1.2.1",
+                "op": "equals",
+                "value": "I"
+              }
+            ]
+          }
+        },
+        {
+          "path": "PV1.18.1",
+          "op": "not_equals",
+          "valueRef": "PRIVATE:EXCLUDED_PATIENT_TYPE"
+        },
+        {
+          "op": "or",
+          "conditions": [
+            {
+              "path": "PID.18.1",
+              "op": "nonempty"
+            },
+            {
+              "path": "PV1.2.1",
+              "op": "equals",
+              "value": "O"
+            }
+          ]
+        },
+        {
+          "path": "FT1.7.1",
+          "op": "not_equals",
+          "valueRef": "PRIVATE:EXCLUDED_TRANSACTION_CODE"
+        }
+      ],
+      "evaluation": "all_filters_must_pass",
+      "disposition_on_failure": "discard_before_source_transformation_in_original",
+      "specific_transport_response_on_rejection": "NOT_VERIFIED"
+    },
+    "unit_assignment_priority": {
+      "kind": "ordered_first_matching_branch",
+      "initial_value": "PRIVATE:UNIT_NOT_CONFIGURED",
+      "source": "original_source_transformer",
+      "decision_branches": [
+        {
+          "priority": 1,
+          "when": "origin_is_PRIVATE:SOURCE_LAB",
+          "resolution": "lookup_default_unit_by_executing_center"
+        },
+        {
+          "priority": 2,
+          "when": "origin_is_PRIVATE:SOURCE_IMAGING",
+          "resolution": "unit_assignment_from_requester_then_executor_policy"
+        },
+        {
+          "priority": 3,
+          "when": "PV1.2.1_is_E",
+          "resolution": "emergency_unit_assignment_by_requester_and_executor_policy"
+        },
+        {
+          "priority": 4,
+          "when": "service_in_PRIVATE:SERVICE_GROUP_DIALYSIS",
+          "resolution": "PRIVATE:UNIT_DIALYSIS"
+        },
+        {
+          "priority": 5,
+          "when": "service_in_PRIVATE:SERVICE_GROUP_NEURO",
+          "resolution": "PRIVATE:UNIT_NEURO"
+        },
+        {
+          "priority": 6,
+          "when": "requester_matches_PRIVATE:REQUESTER_SPECIAL_GROUPS",
+          "resolution": "unit_assignment_by_requester_and_optional_executor_policy"
+        },
+        {
+          "priority": 7,
+          "when": "service_in_PRIVATE:SERVICE_GROUP_SPECIAL_CHARGES",
+          "resolution": "lookup_default_unit_by_requesting_center"
+        },
+        {
+          "priority": 8,
+          "when": "executing_center_in_PRIVATE:EXTERNAL_EXECUTOR_GROUP",
+          "resolution": "lookup_default_unit_by_requesting_center"
+        },
+        {
+          "priority": 9,
+          "when": "otherwise",
+          "resolution": "lookup_by_origin_context_service_executing_center"
+        }
+      ],
+      "before_evaluation": {
+        "FT1.7.1": "take_text_before_first_hyphen_for_policy_lookup_only"
+      },
+      "database_query": {
+        "dependency": "PRIVATE:UNIT_MAPPING_DB",
+        "read_only": true,
+        "first_matching_record": true,
+        "fallback_on_no_row": "lookup_default_unit_by_requesting_center",
+        "fallback_on_no_result": "retain_PRIVATE:UNIT_NOT_CONFIGURED",
+        "sql_text": "OMITTED_CONFIDENTIAL",
+        "exact_predicate_set": "REFER_TO_PRIVATE_POLICY"
+      },
+      "mapping_values_redacted": true
+    },
+    "routing_mode": "independent_destination_filters_in_original; cross_destination_execution_order_requires_verification"
+  },
+  "Operation": [
+    {
+      "id": "OP01",
+      "sequence": 1,
+      "type": "remove_segment",
+      "target": "OBX:first",
+      "condition": "when_first_OBX_exists",
+      "scope": "source_transform"
+    },
+    {
+      "id": "OP02",
+      "sequence": 2,
+      "type": "conditional_assign",
+      "if": {
+        "path": "PR1",
+        "op": "any_segment_present"
+      },
+      "then": [
+        {
+          "set": "PV1.2.1",
+          "value": "I"
+        },
+        {
+          "copy": "FT1.13.1",
+          "to": "FT1.16.1"
+        }
+      ]
+    },
+    {
+      "id": "OP03",
+      "sequence": 3,
+      "type": "lookup_and_branch",
+      "ruleRef": "Rule.unit_assignment_priority",
+      "storeAs": "computed_unit",
+      "required_dependency": "PRIVATE:UNIT_MAPPING_DB"
+    },
+    {
+      "id": "OP04",
+      "sequence": 4,
+      "type": "insert_segment_after",
+      "segment": "OBX",
+      "after": "PV1",
+      "setFields": {
+        "OBX.1.1": "1",
+        "OBX.2.1": "ST",
+        "OBX.3.1": {
+          "valueRef": "PRIVATE:UNIT_OBSERVATION_IDENTIFIER"
+        },
+        "OBX.5.1": {
+          "ref": "computed_unit"
+        }
+      }
+    },
+    {
+      "id": "OP05",
+      "sequence": 5,
+      "type": "conditional_assign",
+      "if": {
+        "path": "FT1.6.1",
+        "equals": "C",
+        "and": [
+          {
+            "path": "FT1.2.2",
+            "op": "nonempty"
+          }
+        ]
+      },
+      "then": [
+        {
+          "copy": "FT1.2.2",
+          "to": "FT1.2.1"
+        }
+      ]
+    },
+    {
+      "id": "OP06",
+      "sequence": 6,
+      "type": "conditional_assign",
+      "if": {
+        "path": "FT1.6.1",
+        "equals": "NC"
+      },
+      "then": [
+        {
+          "set": "FT1.6.1",
+          "value": "D"
+        }
+      ]
+    },
+    {
+      "id": "OP07",
+      "sequence": 7,
+      "type": "capture_context",
+      "name": "episode_number",
+      "path": "PID.18.1",
+      "fallback": "0",
+      "outbound_effect": "NONE_DIRECTLY_ESTABLISHED"
+    },
+    {
+      "id": "OP08",
+      "sequence": 8,
+      "type": "conditional_rebuild_timestamp_text",
+      "target": "FT1.4.1",
+      "read": "timestamp_text",
+      "if": "characters_9_to_14_equal_000000",
+      "notes": "This rebuilds the value and may discard suffix beyond 14 characters, consistent with source slicing; malformed-length behavior unverified.",
+      "result": "FT1.4.1 := substring(original,0,8) + \"000001\" when substring(original,8,14) == \"000000\""
+    },
+    {
+      "id": "OP09",
+      "sequence": 9,
+      "type": "capture_context",
+      "name": "transaction_id",
+      "path": "FT1.2.1",
+      "fallback": "0",
+      "outbound_effect": "NONE_DIRECTLY_ESTABLISHED"
+    }
+  ],
+  "Destination": [
+    {
+      "id": "D01",
+      "status_original": "ENABLED",
+      "kind": "TCP_MLLP_MESSAGE",
+      "binding": "PRIVATE:DESTINATION_A",
+      "selection": {
+        "all": [
+          {
+            "path": "MSH.3.1",
+            "equalsRef": "PRIVATE:SOURCE_A"
+          }
+        ],
+        "evaluation_sequence": [
+          {
+            "op": "conditional_assign",
+            "if": {
+              "op": "source_list_string_contains_at_index_gt_zero",
+              "needlePath": "PV1.18.1",
+              "haystackRef": "PRIVATE:PATIENT_TYPES_INPATIENT_SEMICOLON_STRING"
+            },
+            "then": {
+              "set": "PV1.2.1",
+              "value": "I"
+            },
+            "note": "The source uses a substring search in a semicolon-delimited literal, not a formally validated set membership operation."
+          },
+          {
+            "op": "accept_unless",
+            "condition": {
+              "all": [
+                {
+                  "path": "FT1.7.1",
+                  "op": "contains_hyphen_at_index_gt_zero"
+                },
+                {
+                  "path": "PV1.2.1",
+                  "op": "equals",
+                  "value": "I"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "transformation": [
+        {
+          "if": "length(FT1.4.1)<14",
+          "copy": "FT1.5.1",
+          "to": "FT1.4.1"
+        },
+        {
+          "if": "source_list_string_contains_at_index_gt_zero(PV1.18.1,PRIVATE:PATIENT_TYPES_INPATIENT_SEMICOLON_STRING)",
+          "set": "PV1.2.1",
+          "value": "I"
+        },
+        {
+          "if": "FT1.7.1_in_PRIVATE:SERVICE_GROUP_ADJUSTMENT",
+          "copy": "FT1.12.1",
+          "to": "FT1.11.1"
+        }
+      ],
+      "delivery": "send_transformed_message"
+    },
+    {
+      "id": "D02",
+      "status_original": "ENABLED",
+      "kind": "TCP_MLLP_MESSAGE",
+      "binding": "PRIVATE:DESTINATION_B",
+      "selection": {
+        "path": "MSH.3.1",
+        "equalsRef": "PRIVATE:SOURCE_B",
+        "and": [
+          {
+            "op": "lookup_gate",
+            "dependency": "PRIVATE:PATIENT_DIRECTORY_DB",
+            "rule": "reject_if_lookup_patient_number_equals_literal_zero",
+            "missing_row_behavior_original": "passes_when_empty_string; requires_confirmation_with_tests"
+          }
+        ]
+      },
+      "transformation": "NO_ADDITIONAL_DESTINATION_FIELD_CHANGE_IN_EXPORTED_TRANSFORMER",
+      "delivery": "send_transformed_message"
+    },
+    {
+      "id": "D03",
+      "status_original": "ENABLED",
+      "kind": "TCP_MLLP_MESSAGE",
+      "binding": "PRIVATE:DESTINATION_A",
+      "selection": {
+        "path": "MSH.3.1",
+        "equalsRef": "PRIVATE:SOURCE_C"
+      },
+      "transformation": [
+        {
+          "set": "MSH.3.1",
+          "valueRef": "PRIVATE:OUTBOUND_SENDING_APPLICATION"
+        },
+        {
+          "set": "MSH.5.1",
+          "valueRef": "PRIVATE:OUTBOUND_RECEIVING_APPLICATION"
+        },
+        {
+          "set": "MSH.12.1",
+          "value": "2.3"
+        },
+        {
+          "copy": "PID.3[x].1 where PID.3[x].4 == PRIVATE:PATIENT_ID_NAMESPACE",
+          "to": "PID.2.1"
+        },
+        {
+          "set": "PV1.7.1",
+          "value": ""
+        },
+        {
+          "copy": "FT1.13.1",
+          "to": "PV1.10.1"
+        },
+        {
+          "copy": "FT1.16.1",
+          "to": "PV1.11.1"
+        },
+        {
+          "append": "01",
+          "to": "FT1.4.1"
+        },
+        {
+          "set": "FT1.23.4",
+          "valueRef": "PRIVATE:ORDER_IDENTIFIER_AUTHORITY"
+        },
+        {
+          "prepend": "L",
+          "to": "FT1.2.1"
+        }
+      ],
+      "delivery": "send_transformed_message_to_same_logical_destination_as_D01",
+      "notes": "The two original destinations share endpoint; no private address disclosed"
+    },
+    {
+      "id": "D04",
+      "status_original": "ENABLED",
+      "kind": "FILE_WRITE",
+      "binding": "PRIVATE:POSTCHECK_DIRECTORY",
+      "selection": {
+        "channelContextField": "Filtro",
+        "equals": "false"
+      },
+      "payload": "message",
+      "file_naming": "generated_uuid_with_extension_CHG",
+      "dependency_on_destination_execution_order": "UNRESOLVED",
+      "delivery": "write_file"
+    },
+    {
+      "id": "D05",
+      "status_original": "ENABLED",
+      "kind": "INTERNAL_CHANNEL_DISPATCH",
+      "binding": "PRIVATE:INTERNAL_CHANNEL",
+      "selection": {
+        "all": [
+          {
+            "path": "MSH.9.1",
+            "equals": "DFT"
+          },
+          {
+            "path": "PR1",
+            "op": "any_segment_present"
+          }
+        ]
+      },
+      "payload": "message",
+      "delivery": "dispatch_to_other_channel",
+      "converted_implementation": "NO_MATCHING_DISPATCH_FOUND_IN_SUPPLIED_PRODUCTION"
+    },
+    {
+      "id": "D06",
+      "status_original": "ENABLED",
+      "kind": "FILE_WRITE",
+      "binding": "PRIVATE:SEMAPHORE_DIRECTORY",
+      "selection": {
+        "all": [
+          {
+            "path": "MSH.3.1",
+            "equalsRef": "PRIVATE:SOURCE_B"
+          },
+          {
+            "op": "directory_lookup",
+            "dependency": "PRIVATE:PATIENT_DIRECTORY_DB",
+            "predicate": "no_record_with_nonnull_external_patient_number"
+          }
+        ]
+      },
+      "transformation": [
+        {
+          "type": "remove_segment",
+          "target": "OBX:first"
+        }
+      ],
+      "file_naming": "generated_uuid_with_extension_HL7",
+      "delivery": "write_file",
+      "implementation_note": "Original route transform also includes sleep(10), and conversion uses an approximate 10 ms pause. It is implementation timing, not a stated functional requirement; include its elapsed time in any E2E benchmark."
+    },
+    {
+      "id": "D07",
+      "status_original": "ENABLED",
+      "kind": "EMAIL_NOTIFICATION",
+      "binding": "PRIVATE:NOTIFICATION_ENDPOINT",
+      "selection": {
+        "path": "OBX.5.1",
+        "equalsRef": "PRIVATE:UNIT_NOT_CONFIGURED"
+      },
+      "message_subject_and_body": "PRIVATE:TEMPLATE_NOTIFY",
+      "delivery": "email"
+    },
+    {
+      "id": "D08",
+      "status_original": "ENABLED",
+      "kind": "DATABASE_WRITE",
+      "binding": "PRIVATE:AUDIT_DB",
+      "selection": {
+        "path": "OBX.5.1",
+        "equalsRef": "PRIVATE:UNIT_NOT_CONFIGURED"
+      },
+      "row_values": "extract_message_identifiers_and_business_fields",
+      "schema_and_sql": "PRIVATE:LOG_RECORD_MAPPING",
+      "delivery": "write_database_row"
+    }
+  ],
+  "Channel": {
+    "active_destinations": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D06",
+      "D07",
+      "D08"
+    ],
+    "inactive_original_destinations_count": 3,
+    "inactive_behavior": "OUT_OF_RUNTIME_SCOPE",
+    "multiple_destinations_can_be_selected": true,
+    "delivery_order_and_failure_effects": "NOT_VERIFIED",
+    "specific_delivery_guarantees": "UNVERIFIED"
+  },
+  "Dependency": [
+    {
+      "id": "UNIT_MAPPING_DB",
+      "role": "unit_selection_with_fallback"
+    },
+    {
+      "id": "PATIENT_DIRECTORY_DB",
+      "role": "routing_and_semaphore_condition"
+    },
+    {
+      "id": "AUDIT_DB",
+      "role": "audit_unmapped_units"
+    },
+    {
+      "id": "INTERNAL_CHANNEL",
+      "role": "secondary_processing_for_messages_with_procedure"
+    },
+    {
+      "id": "NOTIFICATION_ENDPOINT",
+      "role": "send_unmapped_unit_alerts"
+    },
+    {
+      "id": "OUTPUT_ENDPOINTS",
+      "role": "MLLP_and_file_destinations"
+    }
+  ],
+  "BehaviorContract": {
+    "inputs": {
+      "accepted_family": "HL7v2_DFT",
+      "validation": "Rule.inbound_acceptance"
+    },
+    "required_effects": [
+      "source_operations_OP01_to_OP09_in_order",
+      "all_applicable_enabled_destinations_D01_to_D08",
+      "required_branch_specific_transforms",
+      "unmapped_unit_notification_and_log_where_rule_matches"
+    ],
+    "forbidden_effects": [
+      "silently_drop_a_required_destination",
+      "assume_success_after_incomplete_processing",
+      "expose_deployment_secrets_as_part_of_portable_definition"
+    ],
+    "observable_order_constraints": "SAME_MESSAGE_SOURCE_TRANSFORM_BEFORE_DESTINATION_SPECIFIC_BEHAVIOR; other ordering pending",
+    "outcome_semantics": "source_derived_only_no_empirical_equivalence",
+    "error_behavior": "UNKNOWN_REQUIRES_BEHAVIORAL_EVIDENCE",
+    "acknowledgement": "BEFORE_PROCESSING_IN_ORIGINAL; target_unverified",
+    "timeouts_and_retries": "IMPLEMENTATION_SETTINGS_NOT_A_COMMON_PORTABLE_CONTRACT_YET",
+    "performance_requirements": "NONE_DECLARED"
+  },
+  "ConformanceCases": {
+    "status": "CANDIDATES_NOT_EXECUTED",
+    "scenarios": [
+      {
+        "id": "TC01",
+        "scenario": "Input rejected by source predicate",
+        "expected": "no destination effects; response semantics unverified"
+      },
+      {
+        "id": "TC02",
+        "scenario": "Input with procedure segment",
+        "expected": "source classification update and enabled internal-channel dispatch"
+      },
+      {
+        "id": "TC03",
+        "scenario": "Source A with qualifying service and patient type",
+        "expected": "destination-specific admission/field mutation per D01 rules"
+      },
+      {
+        "id": "TC04",
+        "scenario": "Source B with existing/missing patient record",
+        "expected": "D02 lookup gate and D06 inverse file notification branch"
+      },
+      {
+        "id": "TC05",
+        "scenario": "Source C",
+        "expected": "D03 field transformations and configured shared endpoint; D04 behavior must be tested"
+      },
+      {
+        "id": "TC06",
+        "scenario": "No mapping unit found",
+        "expected": "configured sentinel in OBX and D07/D08 effects"
+      },
+      {
+        "id": "TC07",
+        "scenario": "Cancellation or non-charge",
+        "expected": "FT1.2 and FT1.6 updates when applicable"
+      },
+      {
+        "id": "TC08",
+        "scenario": "Timestamp with midnight zeros",
+        "expected": "FT1.4 low-order six characters change from 000000 to 000001 when matching script condition"
+      },
+      {
+        "id": "TC09",
+        "scenario": "Patient-type text partially matches a semicolon-delimited source literal, or PV1.2 was already I",
+        "expected": "Check exact substring and mutation-order behavior in destination D01, not assumed set membership"
+      }
+    ],
+    "evidence": [],
+    "engine_A": "NOT_TESTED",
+    "engine_B": "NOT_TESTED",
+    "equivalence": "NOT_DEMONSTRATED"
+  },
+  "KnownLimitations": [
+    "Private predicates, lookup mappings and routing constants have been removed and require local bindings before semantics are executable.",
+    "The second export is a generated conversion of the first, not proof of independent behavioral equivalence.",
+    "Enabled internal destination D05 exists in the original but has no equivalent observable dispatch in the converted production.",
+    "Destination evaluation order differs in the converted orchestration; D04 depends on a context variable set by destination transformations, notably D03.",
+    "The converted XML explicitly documents unresolved manual configuration and review requirements.",
+    "Source acceptance condition in converted orchestration contains generated expression/quoting structures needing compilation and testing.",
+    "Original upstream acknowledgement timing and target downstream guarantee are not established as equivalent.",
+    "No test messages, expected output samples, runtime logs or conformance executions were supplied.",
+    "D01 origin-specific filter mutates PV1.2 before evaluating its exclusion. Source implements patient-type matching as substring index > 0, not strict set membership; the initial PFD retains that distinction.",
+    "One file route pauses for a short implementation-specific interval after deleting OBX; that interval is not presumed to be a normative requirement but cannot be subtracted from measured E2E."
+  ]
+}
