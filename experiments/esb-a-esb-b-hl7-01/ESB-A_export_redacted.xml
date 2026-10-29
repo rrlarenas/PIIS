@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SanitizedExport label="ESB-A" profile="PIIS-structural-evidence/0.1" execution="NOT_EXECUTABLE" completeness="REDACTED" original_native_export="NOT_INCLUDED">
+  <Input kind="inbound_message" enabled="true">
+    <Transport kind="TCP" framing="MLLP" payload_family="HL7v2" charset="ISO-8859-1">
+      <TransportParameter name="startOfMessageBytes" value="0B" />
+      <TransportParameter name="endOfMessageBytes" value="1C0D" />
+      <TransportParameter name="ackBytes" value="06" />
+      <TransportParameter name="nackBytes" value="15" />
+      <TransportParameter name="useMLLPv2" value="false" />
+    </Transport>
+    <InputTemplate redacted="true" present="true" />
+  </Input>
+  <InputFilters count="3">
+    <Rule index="1" implementation="REDACTED" condition_class="comparison" operands="REDACTED" field_count="2">
+      <ReferencedField index="1" hl7_path="ORC.10" />
+      <ReferencedField index="2" hl7_path="ORC.10.3" />
+    </Rule>
+    <Rule index="2" implementation="REDACTED" condition_class="comparison" operands="REDACTED" field_count="2">
+      <ReferencedField index="1" hl7_path="OBR.4" />
+      <ReferencedField index="2" hl7_path="OBR.4.1" />
+    </Rule>
+    <Rule index="3" implementation="REDACTED" condition_class="comparison" operands="REDACTED" field_count="2">
+      <ReferencedField index="1" hl7_path="OBR.2" />
+      <ReferencedField index="2" hl7_path="OBR.2.1" />
+    </Rule>
+  </InputFilters>
+  <InputTransformations count="3">
+    <Step index="1" kind="conditional_transform" raw_code="REDACTED" source_literals="REDACTED">
+      <ReferencedField index="1" hl7_path="PID.18" />
+      <ReferencedField index="2" hl7_path="PID.18.1" />
+      <ReferencedField index="3" hl7_path="PV1.2" />
+      <ReferencedField index="4" hl7_path="PV1.2.1" />
+    </Step>
+    <Step index="2" kind="field_transform" raw_code="REDACTED" source_literals="REDACTED">
+      <ReferencedField index="1" hl7_path="PID.11" />
+    </Step>
+    <Step index="3" kind="external_lookup" raw_code="REDACTED" source_literals="REDACTED">
+      <ReferencedField index="1" hl7_path="ORC.2" />
+      <ReferencedField index="2" hl7_path="ORC.2.1" />
+      <ReferencedField index="3" hl7_path="PV1.18" />
+      <ReferencedField index="4" hl7_path="PV1.18.1" />
+    </Step>
+  </InputTransformations>
+  <Destinations count="2">
+    <Destination index="1" kind="message_send" enabled="true" private_binding="REDACTED">
+      <Transport kind="TCP" framing="MLLP" payload_family="HL7v2" charset="ISO-8859-1" />
+      <Filters count="4">
+        <Rule index="1" condition_class="comparison" operands="REDACTED" raw_code="REDACTED">
+          <ReferencedField index="1" hl7_path="MSH.3" />
+          <ReferencedField index="2" hl7_path="MSH.3.1" />
+        </Rule>
+        <Rule index="2" condition_class="comparison" operands="REDACTED" raw_code="REDACTED">
+          <ReferencedField index="1" hl7_path="PV1.2" />
+          <ReferencedField index="2" hl7_path="PV1.2.1" />
+        </Rule>
+        <Rule index="3" condition_class="comparison" operands="REDACTED" raw_code="REDACTED">
+          <ReferencedField index="1" hl7_path="ORC.2" />
+          <ReferencedField index="2" hl7_path="ORC.2.2" />
+        </Rule>
+        <Rule index="4" condition_class="comparison" operands="REDACTED" raw_code="REDACTED">
+          <ReferencedField index="1" hl7_path="MSH.9" />
+          <ReferencedField index="2" hl7_path="MSH.9.1" />
+        </Rule>
+      </Filters>
+      <Transformations count="1">
+        <Step index="1" kind="field_transform" raw_code="REDACTED">
+          <ReferencedField index="1" hl7_path="PID.3" />
+          <ReferencedField index="2" hl7_path="PID.3.1" />
+          <ReferencedField index="3" hl7_path="PID.3.4" />
+        </Step>
+      </Transformations>
+      <ResponseTransformations count="0" />
+    </Destination>
+    <Destination index="2" kind="database_write" enabled="false" private_binding="REDACTED">
+      <Filters count="1">
+        <Rule index="1" condition_class="comparison" operands="REDACTED" raw_code="REDACTED">
+          <ReferencedField index="1" hl7_path="MSH.9" />
+          <ReferencedField index="2" hl7_path="MSH.9.1" />
+        </Rule>
+      </Filters>
+      <Transformations count="1">
+        <Step index="1" kind="field_transform" raw_code="REDACTED">
+          <ReferencedField index="1" hl7_path="MSH.9" />
+          <ReferencedField index="2" hl7_path="MSH.9.1" />
+          <ReferencedField index="3" hl7_path="MSH.9.2" />
+          <ReferencedField index="4" hl7_path="PID.3" />
+          <ReferencedField index="5" hl7_path="PID.3.1" />
+          <ReferencedField index="6" hl7_path="PID.5" />
+          <ReferencedField index="7" hl7_path="PID.5.1" />
+          <ReferencedField index="8" hl7_path="PID.5.2" />
+        </Step>
+      </Transformations>
+      <ResponseTransformations count="0" />
+    </Destination>
+  </Destinations>
+  <Redaction all_scripts="REMOVED" all_templates="REMOVED_INCLUDING_BASE64" network_addresses="REMOVED" identifiers="REMOVED" sql="REMOVED" credentials="REMOVED" free_text="REMOVED" embedded_payloads="REMOVED" />
+</SanitizedExport>
