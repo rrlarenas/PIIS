@@ -18,6 +18,7 @@
 | [Conformance and benchmark notes](docs/CONFORMANCE_AND_BENCHMARKS.md) | English | Preliminary methodology |
 | [Sample 01 — Anonymized clinical DFT interface](samples/clinical-dft-draft01/README.md) | English / Spanish | **Exploratory PFD; not executable or conformance-tested** |
 | [Sample 02 — Anonymized financial-document integration](samples/tax-documents-draft01/README.md) | English / Spanish | **Exploratory JSON PFD; conformance not demonstrated** |
+| [PIIS JSON PFD Proposal 0.1](proposals/json-pfd-0.1/README.md) | English | **First public structural schema proposal; open review, not normative** |
 | [Research and prior work](docs/PRIOR_WORK.md) | English | Comparison agenda |
 | [Contributing](CONTRIBUTING.md) | English | Review and contribution rules |
 | [Citation metadata](CITATION.cff) | English | Attribution and release metadata |
@@ -32,6 +33,7 @@ The Spanish draft is the original reference; the English text is a translation f
 - **[Review #1: Prior art and possible duplication](https://github.com/rrlarenas/PIIS/issues/1)** — challenge the novelty claim; reuse or extend existing standards where possible.
 - **[Review #2: Minimal portable functional model](https://github.com/rrlarenas/PIIS/issues/2)** — define sufficient functional semantics and observable contracts without prescribing internal execution.
 - **[Review #3: Complete E2E comparison](https://github.com/rrlarenas/PIIS/issues/3)** — compare only conforming implementations, including all architecture-dependent time and resources.
+- **[Review #4: JSON PFD proposal 0.1](https://github.com/rrlarenas/PIIS/issues/4)** — challenge the first structural schema, portable semantics, and observable contract representation.
 
 **Review invitation:** Please cite an exact specification version and normative section, propose a reproducible counterexample, or share independent conformance evidence. Demonstrating that an existing standard already solves part or all of PIIS's problem is a valuable contribution.
 
