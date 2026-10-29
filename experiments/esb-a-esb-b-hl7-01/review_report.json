@@ -1,0 +1,80 @@
+{
+  "experiment": "PIIS two-implementation static extraction — prototype 0.1",
+  "assumptions": [
+    "ESB-A and ESB-B represent the same intended functional outcome, by user declaration",
+    "No runtime execution or cross-platform equivalence test has been performed"
+  ],
+  "labels": {
+    "input_1": "ESB-A",
+    "input_2": "ESB-B"
+  },
+  "esb_a": {
+    "source_kind": "inbound_message",
+    "poll_interval_ms": null,
+    "enabled_destinations": 1,
+    "disabled_destinations": 1,
+    "transformation_steps": 5,
+    "filter_rules": 8,
+    "effect_categories": {
+      "database_read": 1,
+      "message_send": 1
+    },
+    "unclassified_elements": 0,
+    "conditional_logic_detected": true,
+    "explicit_manual_gaps_detected": 0
+  },
+  "esb_b": {
+    "source_kind": "inbound_message",
+    "poll_interval_ms": null,
+    "enabled_deployment_items": 5,
+    "source_services": 2,
+    "transformation_definitions": 4,
+    "effect_categories": {
+      "database_read": 1,
+      "database_write": 1,
+      "message_send": 1
+    },
+    "unclassified_elements": 0,
+    "conditional_logic_detected": true,
+    "manual_gap_categories": []
+  },
+  "shared_effect_categories": [
+    "database_read",
+    "message_send"
+  ],
+  "differences_and_gaps": [
+    {
+      "type": "observed_only_in_esb_b",
+      "effect_categories": [
+        "database_write"
+      ]
+    }
+  ],
+  "structural_compliance": "NOT_CHECKED_UNLESS_SCHEMA_PROVIDED",
+  "semantic_compliance": "NOT_DEMONSTRATED",
+  "functional_equivalence": "NOT_TESTED",
+  "security_notice": "Generated report excludes original code, free-text metadata, endpoints, credentials and payloads. Still review before publication.",
+  "next_steps": [
+    "Confirm categories and real operation semantics against exports privately",
+    "Define exact functional rules in a fully synthetic complete example",
+    "Design and execute independent observable-contract tests"
+  ],
+  "case_id": "PIIS-CANDIDATE-ORM-001",
+  "observed_external_standards": [
+    "HL7 v2",
+    "MLLP/TCP"
+  ],
+  "notes_on_differences": [
+    "database_write observed only in ESB-B is a static classifier signal, not proof the interface executes a database write. Review the reachability of shared SQL helper code.",
+    "ESB-A has one disabled database destination. Static presence of a disabled connector is not evidence of an intended side effect.",
+    "Neither structural similarity nor the declared equivalence precondition establishes conformance."
+  ],
+  "publication_safety": {
+    "export_format": "REDACTED_STRUCTURAL_VIEWS_NOT_NATIVE_IMPORTABLE",
+    "original_xml_included": false,
+    "original_scripts_included": false,
+    "embedded_templates_included": false,
+    "credentials_included": false,
+    "claims": "Not a guarantee that all abstract workflow semantics are non-confidential; manual review required."
+  }
+}
