@@ -1,0 +1,49 @@
+{
+  "document_type": "PIIS Private Binding Template (intentionally unpopulated)",
+  "status": "EXAMPLE_PLACEHOLDERS_NOT_DEPLOYABLE",
+  "warning": "Do not populate this file in a public repository; use a local secret manager. Values were intentionally not derived/copied from source exports.",
+  "endpoints": {
+    "SOURCE_ENDPOINT": null,
+    "DESTINATION_A": null,
+    "DESTINATION_B": null,
+    "POSTCHECK_DIRECTORY": null,
+    "SEMAPHORE_DIRECTORY": null,
+    "INTERNAL_CHANNEL": null,
+    "NOTIFICATION_ENDPOINT": null
+  },
+  "datastores": {
+    "UNIT_MAPPING_DB": null,
+    "PATIENT_DIRECTORY_DB": null,
+    "AUDIT_DB": null
+  },
+  "business_policies": {
+    "SOURCE_A": null,
+    "SOURCE_B": null,
+    "SOURCE_C": null,
+    "SOURCE_LAB": null,
+    "SOURCE_IMAGING": null,
+    "EXCLUDED_SERVICE_MARKER": null,
+    "EXCLUDED_PATIENT_TYPE": null,
+    "EXCLUDED_TRANSACTION_CODE": null,
+    "PATIENT_TYPES_INPATIENT": null,
+    "SERVICE_GROUP_ADJUSTMENT": null,
+    "SERVICE_GROUP_DIALYSIS": null,
+    "SERVICE_GROUP_NEURO": null,
+    "SERVICE_GROUP_SPECIAL_CHARGES": null,
+    "EXTERNAL_EXECUTOR_GROUP": null,
+    "REQUESTER_SPECIAL_GROUPS": null,
+    "UNIT_DIALYSIS": null,
+    "UNIT_NEURO": null,
+    "UNIT_NOT_CONFIGURED": null,
+    "UNIT_OBSERVATION_IDENTIFIER": null,
+    "OUTBOUND_SENDING_APPLICATION": null,
+    "OUTBOUND_RECEIVING_APPLICATION": null,
+    "PATIENT_ID_NAMESPACE": null,
+    "ORDER_IDENTIFIER_AUTHORITY": null,
+    "UNIT_ASSIGNMENT_REQUESTER_EXECUTOR_POLICY": null,
+    "UNIT_ASSIGNMENT_EMERGENCY_POLICY": null,
+    "UNIT_MAPPING_LOOKUP_PREDICATES": null,
+    "LOG_RECORD_MAPPING": null,
+    "TEMPLATE_NOTIFY": null
+  }
+}
