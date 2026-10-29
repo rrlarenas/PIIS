@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SanitizedExport label="ESB-B" profile="PIIS-structural-evidence/0.1" execution="NOT_EXECUTABLE" completeness="REDACTED" original_native_export="NOT_INCLUDED">
+  <Definitions count="14">
+    <Definition index="1" kind="support_type" definition_name="REDACTED" source_code="REDACTED" method_count="7" />
+    <Definition index="2" kind="transformation" definition_name="REDACTED" source_code="REDACTED" method_count="0">
+      <TransformModel statements="2" assign_count="1" condition_count="0" opaque_code_blocks="0" attributes="REDACTED" />
+    </Definition>
+    <Definition index="3" kind="transformation" definition_name="REDACTED" source_code="REDACTED" method_count="0">
+      <TransformModel statements="5" assign_count="4" condition_count="0" opaque_code_blocks="0" attributes="REDACTED" />
+    </Definition>
+    <Definition index="4" kind="transformation" definition_name="REDACTED" source_code="REDACTED" method_count="0">
+      <TransformModel statements="6" assign_count="2" condition_count="1" opaque_code_blocks="1" attributes="REDACTED" />
+    </Definition>
+    <Definition index="5" kind="transformation" definition_name="REDACTED" source_code="REDACTED" method_count="0">
+      <TransformModel statements="2" assign_count="0" condition_count="0" opaque_code_blocks="1" attributes="REDACTED" />
+    </Definition>
+    <Definition index="6" kind="request_type" definition_name="REDACTED" source_code="REDACTED" method_count="0" />
+    <Definition index="7" kind="response_type" definition_name="REDACTED" source_code="REDACTED" method_count="0" />
+    <Definition index="8" kind="operation" definition_name="REDACTED" source_code="REDACTED" method_count="1" />
+    <Definition index="9" kind="request_type" definition_name="REDACTED" source_code="REDACTED" method_count="0" />
+    <Definition index="10" kind="support_type" definition_name="REDACTED" source_code="REDACTED" method_count="41" />
+    <Definition index="11" kind="support_type" definition_name="REDACTED" source_code="REDACTED" method_count="2" />
+    <Definition index="12" kind="orchestration" definition_name="REDACTED" source_code="REDACTED" method_count="0">
+      <ProcessStructure visible_node_count="63" names_and_parameters="REDACTED">
+        <NodeType kind="sequence" count="1" />
+        <NodeType kind="call" count="3" />
+        <NodeType kind="if" count="4" />
+        <NodeType kind="assign" count="8" />
+      </ProcessStructure>
+    </Definition>
+    <Definition index="13" kind="deployment" definition_name="REDACTED" source_code="REDACTED" method_count="0" />
+    <Definition index="14" kind="support_type" definition_name="REDACTED" source_code="REDACTED" method_count="19" />
+  </Definitions>
+  <Deployment count="6">
+    <Item index="1" kind="operation" enabled="true" class_name="REDACTED" component_name="REDACTED" settings="REDACTED" />
+    <Item index="2" kind="operation" enabled="false" class_name="REDACTED" component_name="REDACTED" settings="REDACTED" />
+    <Item index="3" kind="operation" enabled="true" class_name="REDACTED" component_name="REDACTED" settings="REDACTED" />
+    <Item index="4" kind="orchestration" enabled="true" class_name="REDACTED" component_name="REDACTED" settings="REDACTED" />
+    <Item index="5" kind="service" enabled="true" class_name="REDACTED" component_name="REDACTED" settings="REDACTED" />
+    <Item index="6" kind="service" enabled="true" class_name="REDACTED" component_name="REDACTED" settings="REDACTED" />
+  </Deployment>
+  <EvidenceCapabilities report_note="Classification of generic shared components can include methods that the interface never calls; manual verification required" />
+  <Redaction all_scripts="REMOVED" all_templates="REMOVED_INCLUDING_BASE64" network_addresses="REMOVED" identifiers="REMOVED" sql="REMOVED" credentials="REMOVED" free_text="REMOVED" embedded_payloads="REMOVED" />
+</SanitizedExport>
