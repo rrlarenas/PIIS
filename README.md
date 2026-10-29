@@ -17,6 +17,7 @@
 | [English overview](docs/OVERVIEW_EN.md) | English | Informative short summary |
 | [Conformance and benchmark notes](docs/CONFORMANCE_AND_BENCHMARKS.md) | English | Preliminary methodology |
 | [Sample 01 — Anonymized clinical DFT interface](samples/clinical-dft-draft01/README.md) | English / Spanish | **Exploratory PFD; not executable or conformance-tested** |
+| [Sample 02 — Anonymized financial-document integration](samples/tax-documents-draft01/README.md) | English / Spanish | **Exploratory JSON PFD; conformance not demonstrated** |
 | [Research and prior work](docs/PRIOR_WORK.md) | English | Comparison agenda |
 | [Contributing](CONTRIBUTING.md) | English | Review and contribution rules |
 | [Citation metadata](CITATION.cff) | English | Attribution and release metadata |
