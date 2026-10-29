@@ -15,4 +15,4 @@ This is a request for **specific counterexamples and proposed semantics**, not a
 
 **Evidence request:** include sample snippets with synthetic data, exact specification/version references, and observed results where possible. Do not include real patient or client data, credentials, endpoints or proprietary implementation code.
 
-Use [issue #2](https://github.com/rrlarenas/PIIS/issues/2) for the functional model discussion; the dedicated schema issue will be linked from the [proposal README](README.md).
+Use [issue #2](https://github.com/rrlarenas/PIIS/issues/2) for the functional model discussion; the dedicated review thread is [Issue #4 — JSON PFD Proposal 0.1](https://github.com/rrlarenas/PIIS/issues/4).
