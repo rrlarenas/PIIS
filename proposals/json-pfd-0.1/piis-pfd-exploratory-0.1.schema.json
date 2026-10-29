@@ -1,0 +1,311 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/rrlarenas/PIIS/main/proposals/json-pfd-0.1/piis-pfd-exploratory-0.1.schema.json",
+  "title": "PIIS PFD exploratory common structure — review proposal 0.1",
+  "description": "Non-normative structural schema for existing PIIS Samples 01 and 02. Valid JSON does not imply portable execution, completeness, security or conformance. Unknown fields are accepted to avoid losing source-derived information while terminology is under review.",
+  "type": "object",
+  "required": [
+    "piis_document",
+    "Identity",
+    "ExternalStandards",
+    "Source",
+    "Rule",
+    "Operation",
+    "Destination",
+    "Channel",
+    "Dependency",
+    "BehaviorContract",
+    "ConformanceCases",
+    "KnownLimitations"
+  ],
+  "properties": {
+    "piis_document": {
+      "type": "object",
+      "required": [
+        "kind",
+        "working_profile",
+        "schema_status",
+        "semantic_status",
+        "conformance_status"
+      ],
+      "properties": {
+        "kind": {
+          "const": "PortableFunctionalDefinition"
+        },
+        "working_profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "semantic_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "conformance_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_of_truth": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "Identity": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "version",
+        "normative",
+        "anonymized",
+        "workload_executed"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normative": {
+          "type": "boolean"
+        },
+        "anonymized": {
+          "type": "boolean"
+        },
+        "workload_executed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "ExternalStandards": {
+      "type": "object",
+      "required": [
+        "accepted_as_is",
+        "redefines_existing_standards"
+      ],
+      "properties": {
+        "accepted_as_is": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "redefines_existing_standards": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Source": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "Rule": {
+      "type": "object"
+    },
+    "Operation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "sequence",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "Destination": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "status_original",
+          "binding"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status_original": {
+            "type": "string",
+            "minLength": 1
+          },
+          "binding": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "Channel": {
+      "type": "object"
+    },
+    "Dependency": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "role"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "BehaviorContract": {
+      "type": "object",
+      "required": [
+        "required_effects",
+        "forbidden_effects"
+      ],
+      "properties": {
+        "required_effects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden_effects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "ConformanceCases": {
+      "type": "object",
+      "required": [
+        "status",
+        "evidence"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array"
+        },
+        "cases": {
+          "$ref": "#/$defs/proposedTestCases"
+        },
+        "scenarios": {
+          "$ref": "#/$defs/proposedTestCases"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "cases"
+          ]
+        },
+        {
+          "required": [
+            "scenarios"
+          ]
+        }
+      ],
+      "additionalProperties": true
+    },
+    "KnownLimitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "proposedTestCases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "scenario",
+          "expected"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scenario": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expected": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
