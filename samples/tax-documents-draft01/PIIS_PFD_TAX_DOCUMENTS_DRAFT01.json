@@ -1,0 +1,480 @@
+{
+  "piis_document": {
+    "kind": "PortableFunctionalDefinition",
+    "working_profile": "PIIS-case-study/0.1-exploratory",
+    "schema_status": "PROPOSED_NOT_STANDARDIZED",
+    "semantic_status": "PARTIAL_REDACTED",
+    "conformance_status": "NOT_DEMONSTRATED",
+    "language": "es",
+    "source_of_truth": "inspection_of_two_supplied_xml_exports_not_runtime_evidence",
+    "reference": "PIIS Working Draft 02; conceptual alignment only, not a validated PIIS schema"
+  },
+  "Identity": {
+    "id": "PIIS-CASE-TAX-DOCS-002",
+    "title": "Consulta periódica y envío de documentos financieros con actualización de resultados",
+    "version": "draft-01",
+    "normative": false,
+    "anonymized": true,
+    "workload_executed": false,
+    "original_exports_included": false,
+    "converted_export_status": "GENERATED_CONVERSION_NOT_INDEPENDENT_IMPLEMENTATION"
+  },
+  "ExternalStandards": {
+    "status": "EXTERNAL_OUT_OF_SCOPE",
+    "accepted_as_is": [
+      "XML",
+      "SOAP 1.1",
+      "SMTP",
+      "SQL"
+    ],
+    "redefines_existing_standards": false,
+    "private_soap_contract": "PRIVATE:SOAP_SERVICE_CONTRACT",
+    "private_database_contract": "PRIVATE:DB_PROCEDURE_CONTRACTS",
+    "formal_external_schemas_available": false
+  },
+  "Source": {
+    "id": "S01",
+    "kind": "scheduled_database_poll",
+    "trigger_observed_configuration": {
+      "mode": "INTERVAL",
+      "interval_ms": 60000,
+      "poll_on_start": true,
+      "wait_for_previous": "OBSERVED_SOURCE_WAIT_FOR_PREVIOUS_TRUE",
+      "active_calendar_window": "NOT_INDEPENDENTLY_VERIFIED"
+    },
+    "dependency_binding": "PRIVATE:DATABASE_SOURCE",
+    "invocation": {
+      "kind": "stored_procedure",
+      "name_binding": "PRIVATE:GET_PENDING_DOCUMENTS_PROCEDURE",
+      "returns": "database_cursor",
+      "output_cursor_parameter_position": 1,
+      "input_parameters_observed": 0
+    },
+    "per_poll_output": "concatenated_XML_elements_from_cursor_rows",
+    "payload_when_zero_rows": "empty_string_in_source_script",
+    "payload_when_multiple_rows": "multiple_sibling_XML_elements_without_document_root_in_source_script",
+    "poll_error_behavior": "NOT_VERIFIED"
+  },
+  "Rule": {
+    "source_admission": "no_message_filter_rules_present_in_supplied_source_export",
+    "alert_selection": {
+      "condition": "at_least_one_returned_soap_response_status_differs_from_OK",
+      "source_script_comparison": "response_status != 'OK'",
+      "no_response_case": "NOT_VERIFIED"
+    }
+  },
+  "Operation": [
+    {
+      "id": "OP01",
+      "sequence": 1,
+      "type": "invoke_external_procedure",
+      "source": "S01",
+      "parameters": "cursor_out_parameter_at_position_1",
+      "result": "pending_document_rows"
+    },
+    {
+      "id": "OP02",
+      "sequence": 2,
+      "type": "map_rows_to_xml",
+      "input": "OP01.pending_document_rows",
+      "repeat_for_each_row": true,
+      "element_name_binding": "PRIVATE:DOCUMENT_XML_ELEMENT_NAME",
+      "field_mapping": [
+        {
+          "position": 1,
+          "source_column_1_based": 1,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_01_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 2,
+          "source_column_1_based": 2,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_02_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 3,
+          "source_column_1_based": 3,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_03_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 4,
+          "source_column_1_based": 4,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_04_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 5,
+          "source_column_1_based": 5,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_05_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 6,
+          "source_column_1_based": 6,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_06_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 7,
+          "source_column_1_based": 7,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_07_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 8,
+          "source_column_1_based": 8,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_08_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 9,
+          "source_column_1_based": 9,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_09_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 10,
+          "source_column_1_based": 10,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_10_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 11,
+          "source_column_1_based": 11,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_11_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 12,
+          "source_column_1_based": 12,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_12_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 13,
+          "source_column_1_based": 13,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_13_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 14,
+          "source_column_1_based": 14,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_14_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 15,
+          "source_column_1_based": 15,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_15_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 16,
+          "source_column_1_based": 16,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_16_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 17,
+          "source_column_1_based": 17,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_17_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 18,
+          "source_column_1_based": 18,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_18_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 19,
+          "source_column_1_based": 19,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_19_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 20,
+          "source_column_1_based": 20,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_20_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 21,
+          "source_column_1_based": 21,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_21_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 22,
+          "source_column_1_based": 22,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_22_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 23,
+          "source_column_1_based": 23,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_23_TAG",
+          "value_extraction": "database_getString"
+        },
+        {
+          "position": 24,
+          "source_column_1_based": 24,
+          "output_element_ref": "PRIVATE:DOCUMENT_FIELD_24_TAG",
+          "value_extraction": "database_getString"
+        }
+      ],
+      "ordering": "source_cursor_order",
+      "escaping_of_xml_special_characters": "NOT_ESTABLISHED_FROM_SOURCE_SCRIPT",
+      "output_form": "concatenated_sibling_elements_with_no_wrapper",
+      "multi_row_payload_wellformedness": "REQUIRES_TESTING"
+    },
+    {
+      "id": "OP03",
+      "sequence": 3,
+      "type": "invoke_soap_operation",
+      "destination_ref": "D01",
+      "request": {
+        "soap_version_observed": "1.1_envelope_namespace",
+        "body_wrapper_binding": "PRIVATE:SOAP_REQUEST_WRAPPER",
+        "body_content": "OP02.text_serialization",
+        "body_insertion_source": "rawData_without_explicit_schema_transformation",
+        "response_expected_by_script": true
+      },
+      "service_binding": "PRIVATE:SOAP_SERVICE",
+      "execution_status_in_converted_export": "NOT_IMPLEMENTED_MANUAL_TODO"
+    },
+    {
+      "id": "OP04",
+      "sequence": 4,
+      "type": "parse_soap_response_records",
+      "input": "OP03.response_body",
+      "response_repetition": "iterate_all_descendant_elements_named_response_under_soap_body",
+      "fields": [
+        {
+          "role": "document_identifier",
+          "xml_path_binding": "PRIVATE:SOAP_RESPONSE_DOCUMENT_ID_FIELD"
+        },
+        {
+          "role": "document_reference",
+          "xml_path_binding": "PRIVATE:SOAP_RESPONSE_REFERENCE_FIELD"
+        },
+        {
+          "role": "organization_code",
+          "xml_path_binding": "PRIVATE:SOAP_RESPONSE_ORGANIZATION_FIELD"
+        },
+        {
+          "role": "fiscal_year",
+          "xml_path_binding": "PRIVATE:SOAP_RESPONSE_YEAR_FIELD"
+        },
+        {
+          "role": "response_status",
+          "xml_path_binding": "PRIVATE:SOAP_RESPONSE_STATUS_FIELD"
+        }
+      ],
+      "zero_response_records": "no_database_status_update_observed_in_script",
+      "malformed_response_behavior": "NOT_VERIFIED"
+    },
+    {
+      "id": "OP05",
+      "sequence": 5,
+      "type": "write_back_status_for_each_response_record",
+      "input": "OP04.records",
+      "dependency_binding": "PRIVATE:DATABASE_RESULTS",
+      "procedure_binding": "PRIVATE:SAVE_DOCUMENT_RESULT_PROCEDURE",
+      "argument_roles_in_order": [
+        "document_identifier",
+        "document_reference",
+        "organization_code",
+        "fiscal_year",
+        "response_status"
+      ],
+      "applied_per_record": true,
+      "original_statement_assembly": "dynamic_string_concatenation_observed; raw_SQL_omitted",
+      "transaction_isolation_or_atomicity": "NOT_VERIFIED"
+    },
+    {
+      "id": "OP06",
+      "sequence": 6,
+      "type": "accumulate_error_summary",
+      "input": "OP04.records",
+      "condition": "response_status != 'OK'",
+      "captured_roles": [
+        "document_identifier",
+        "organization_code",
+        "response_status"
+      ],
+      "collection_semantics": "semicolon_concatenation_of_each_non_OK_record_in_source_script",
+      "result": "has_error_and_aggregated_details"
+    },
+    {
+      "id": "OP07",
+      "sequence": 7,
+      "type": "conditional_notification",
+      "destination_ref": "D02",
+      "when": "OP06.has_error == true",
+      "format": "HTML_email_with_detail_rows_for_non_OK_responses",
+      "recipient_binding": "PRIVATE:NOTIFICATION_RECIPIENTS",
+      "template_binding": "PRIVATE:NOTIFICATION_TEMPLATE",
+      "behavior_if_no_non_OK_records": "do_not_send_error_alert"
+    }
+  ],
+  "Destination": [
+    {
+      "id": "D01",
+      "status_original": "ENABLED",
+      "kind": "SOAP_WEB_SERVICE",
+      "binding": "PRIVATE:SOAP_SERVICE",
+      "operation_binding": "PRIVATE:SOAP_OPERATION_NAME",
+      "request_response": true,
+      "authentication": "enabled_in_original_configuration; credentials_private",
+      "queue_enabled_original": false,
+      "retry_count_original": 0,
+      "response_validation_enabled_original": false,
+      "converted_implementation": "PLACEHOLDER_ALWAYS_RETURNS_ERROR_NO_REAL_SEND"
+    },
+    {
+      "id": "D02",
+      "status_original": "ENABLED",
+      "kind": "SMTP_EMAIL",
+      "binding": "PRIVATE:ALERT_SMTP_SERVICE",
+      "recipient_binding": "PRIVATE:NOTIFICATION_RECIPIENTS",
+      "selection": "Rule.alert_selection",
+      "queue_enabled_original": false,
+      "retry_count_original": 0,
+      "converted_implementation": "GENERATED_EMAIL_OPERATION_PRESENT_NOT_TESTED"
+    }
+  ],
+  "Channel": {
+    "kind": "scheduled_batch_poll_with_conditional_two_destinations",
+    "active_destinations": [
+      "D01",
+      "D02"
+    ],
+    "primary_effect": "SOAP_request_with_documents_then_per_response_status_persistence",
+    "secondary_effect": "email_notification_on_non_OK_status",
+    "source_response_notified_to_invoker": "no inbound client message; scheduled trigger",
+    "delivery_guarantees": "NOT_VERIFIED",
+    "full_poll_recovery_policy": "NOT_VERIFIED"
+  },
+  "Dependency": [
+    {
+      "id": "DATABASE_SOURCE",
+      "role": "read_pending_documents_via_cursor_procedure"
+    },
+    {
+      "id": "DATABASE_RESULTS",
+      "role": "persist_each_returned_status"
+    },
+    {
+      "id": "SOAP_SERVICE",
+      "role": "submit_financial_document_payload_and_get_responses"
+    },
+    {
+      "id": "ALERT_SMTP_SERVICE",
+      "role": "send_conditional_error_notification"
+    },
+    {
+      "id": "PRIVATE_FIELD_AND_PAYLOAD_SCHEMA",
+      "role": "supply_redacted_XML_tag_names_and_SOAP_contract"
+    }
+  ],
+  "BehaviorContract": {
+    "status": "PROPOSED_FROM_SOURCE_EXPORT_NOT_VERIFIED_EXECUTION",
+    "trigger": "configured_interval_poll",
+    "inputs": "rows_obtained_from_private_database_procedure",
+    "required_effects": [
+      "for_each_source_row_construct_one_XML_element_with_24_ordered_field_values",
+      "send_constructed_data_to_configured_SOAP_operation_when_applicable",
+      "process_each_SOAP_response_record",
+      "write_back_response_status_and_identifiers_for_each_response_record",
+      "send_error_notification_only_if_any_SOAP_response_status_is_not_OK"
+    ],
+    "observable_order_constraints": [
+      "database_source_read_before_SOAP_request",
+      "SOAP_response_before_per_record_status_updates",
+      "non_OK_accumulation_before_conditional_alert"
+    ],
+    "forbidden_effects": [
+      "treat_unimplemented_SOAP_sender_as_success",
+      "claim_successful_migration_without_executed_conformance_tests",
+      "publish_real_endpoints_credentials_documents_or_private_database_definitions"
+    ],
+    "retry_semantics": "original_destination_retry_count_is_0; end_to_end_retry_guarantee_unverified",
+    "failed_transport_semantics": "NOT_VERIFIED",
+    "empty_poll_semantics": "NOT_VERIFIED_BEYOND_EMPTY_SOURCE_SCRIPT_RETURN",
+    "multi_row_transport_semantics": "NOT_VERIFIED",
+    "duplicate_handling": "NOT_VERIFIED",
+    "idempotency": "NOT_VERIFIED",
+    "timeout_behavior": "NOT_VERIFIED",
+    "response_status_semantics": "literal_OK_is_only_explicit_success_comparison_in_source_script",
+    "data_integrity": "FULL_VALUE_ESCAPING_ENCODING_AND_NULL_HANDLING_NOT_VERIFIED",
+    "latency_or_throughput_SLA": "NONE_DECLARED"
+  },
+  "ConformanceCases": {
+    "status": "PROPOSED_NOT_EXECUTED",
+    "cases": [
+      {
+        "id": "TC01",
+        "scenario": "scheduled poll returns zero rows",
+        "expected": "source script returns empty string; downstream emission and error behavior require observation"
+      },
+      {
+        "id": "TC02",
+        "scenario": "scheduled poll returns one valid row and SOAP responds OK",
+        "expected": "one 24-field XML element, one attempted SOAP send, one results write-back, no error alert"
+      },
+      {
+        "id": "TC03",
+        "scenario": "SOAP response contains one non_OK record",
+        "expected": "per-record status write-back plus one conditional alert containing that record"
+      },
+      {
+        "id": "TC04",
+        "scenario": "SOAP response contains mixed OK and non_OK records",
+        "expected": "one write-back per response record, alert includes non_OK records"
+      },
+      {
+        "id": "TC05",
+        "scenario": "poll returns multiple source rows",
+        "expected": "preserve each row and observe handling of sibling XML elements without an enclosing root"
+      },
+      {
+        "id": "TC06",
+        "scenario": "SOAP endpoint cannot be reached",
+        "expected": "error/retry/status/alert behavior not specified by supplied runtime evidence; no silent success"
+      },
+      {
+        "id": "TC07",
+        "scenario": "database write-back fails for a response record",
+        "expected": "verify handling, partial effects and recovery without presuming atomicity"
+      },
+      {
+        "id": "TC08",
+        "scenario": "converted implementation receives input requiring SOAP send",
+        "expected": "current generated SOAP operation returns explicit error; not conformant to required send effect"
+      },
+      {
+        "id": "TC09",
+        "scenario": "row values contain ampersand, angle bracket, XML null or encoding edge cases",
+        "expected": "verify whether source constructs well-formed XML and preserves values"
+      }
+    ],
+    "evidence": [],
+    "source_engine": "NOT_EXECUTED",
+    "converted_engine": "NOT_EXECUTED",
+    "equivalence": "NOT_DEMONSTRATED"
+  },
+  "KnownLimitations": [
+    "The second export is generated from the first and is not independent implementation evidence.",
+    "Converted SOAP sender operation is a TODO MANUAL placeholder that deliberately returns an error; required outbound effect is not implemented in the supplied converted export.",
+    "Original source concatenates multiple XML row elements without an enclosing document root; multiple-row handling and SOAP acceptance need execution tests.",
+    "The converted service imports the source result as an XML document; its behavior with multi-root fragments is untested.",
+    "Private stored-procedure signatures and field names are anonymized; the JSON is necessarily partially specified and cannot be used to regenerate a working interface by itself.",
+    "Failure behavior, transaction consistency, retry/duplicate handling, XML escaping, null handling and SMTP results are not established by export inspection alone.",
+    "Original update statement is constructed by string concatenation; safe parameter binding and injection resistance require separate review.",
+    "The exact SMTP alert body in the source uses semicolon-split arrays and may generate an empty trailing detail row; no normalization is assumed here.",
+    "Not a normative PIIS JSON schema, conformance report or benchmark."
+  ]
+}
