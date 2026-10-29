@@ -1,0 +1,58 @@
+{
+  "document_type": "PIIS Private Binding Template (intentionally unpopulated)",
+  "sample_id": "PIIS-CASE-TAX-DOCS-002",
+  "status": "EXAMPLE_PLACEHOLDERS_NOT_DEPLOYABLE",
+  "warning": "Do not add real credentials, endpoint details, patient or financial data, business policies, stored-procedure source or identifiers to a public repository.",
+  "database": {
+    "DATABASE_SOURCE": null,
+    "DATABASE_RESULTS": null,
+    "GET_PENDING_DOCUMENTS_PROCEDURE": null,
+    "SAVE_DOCUMENT_RESULT_PROCEDURE": null,
+    "DB_PROCEDURE_CONTRACTS": null
+  },
+  "soap": {
+    "SOAP_SERVICE": null,
+    "SOAP_SERVICE_CONTRACT": null,
+    "SOAP_OPERATION_NAME": null,
+    "SOAP_REQUEST_WRAPPER": null,
+    "SOAP_RESPONSE_DOCUMENT_ID_FIELD": null,
+    "SOAP_RESPONSE_REFERENCE_FIELD": null,
+    "SOAP_RESPONSE_ORGANIZATION_FIELD": null,
+    "SOAP_RESPONSE_YEAR_FIELD": null,
+    "SOAP_RESPONSE_STATUS_FIELD": null
+  },
+  "notifications": {
+    "ALERT_SMTP_SERVICE": null,
+    "NOTIFICATION_RECIPIENTS": null,
+    "NOTIFICATION_TEMPLATE": null
+  },
+  "payload_schema": {
+    "DOCUMENT_XML_ELEMENT_NAME": null,
+    "DOCUMENT_FIELD_TAG_MAPPING": {
+      "DOCUMENT_FIELD_01_TAG": null,
+      "DOCUMENT_FIELD_02_TAG": null,
+      "DOCUMENT_FIELD_03_TAG": null,
+      "DOCUMENT_FIELD_04_TAG": null,
+      "DOCUMENT_FIELD_05_TAG": null,
+      "DOCUMENT_FIELD_06_TAG": null,
+      "DOCUMENT_FIELD_07_TAG": null,
+      "DOCUMENT_FIELD_08_TAG": null,
+      "DOCUMENT_FIELD_09_TAG": null,
+      "DOCUMENT_FIELD_10_TAG": null,
+      "DOCUMENT_FIELD_11_TAG": null,
+      "DOCUMENT_FIELD_12_TAG": null,
+      "DOCUMENT_FIELD_13_TAG": null,
+      "DOCUMENT_FIELD_14_TAG": null,
+      "DOCUMENT_FIELD_15_TAG": null,
+      "DOCUMENT_FIELD_16_TAG": null,
+      "DOCUMENT_FIELD_17_TAG": null,
+      "DOCUMENT_FIELD_18_TAG": null,
+      "DOCUMENT_FIELD_19_TAG": null,
+      "DOCUMENT_FIELD_20_TAG": null,
+      "DOCUMENT_FIELD_21_TAG": null,
+      "DOCUMENT_FIELD_22_TAG": null,
+      "DOCUMENT_FIELD_23_TAG": null,
+      "DOCUMENT_FIELD_24_TAG": null
+    }
+  }
+}
