@@ -1,0 +1,111 @@
+{
+  "piis_document": {
+    "kind": "PortableFunctionalDefinition",
+    "working_profile": "PIIS-ESB-comparison/0.1-exploratory",
+    "schema_status": "PROPOSED_NOT_STANDARDIZED",
+    "semantic_status": "PARTIAL_INFERRED",
+    "conformance_status": "NOT_DEMONSTRATED",
+    "language": "en",
+    "source_of_truth": "static_export_inspection_under_assumed_functional_intent"
+  },
+  "Identity": {
+    "id": "PIIS-CANDIDATE-ORM-001",
+    "title": "ESB-A / ESB-B candidate — inbound HL7 integration",
+    "version": "0.1-candidate",
+    "normative": false,
+    "anonymized": true,
+    "workload_executed": false
+  },
+  "ExternalStandards": {
+    "status": "OBSERVED_FROM_STATIC_CONFIGURATIONS",
+    "accepted_as_is": [
+      "HL7 v2",
+      "MLLP/TCP"
+    ],
+    "redefines_existing_standards": false
+  },
+  "Source": {
+    "id": "S01",
+    "kind": "inbound_message",
+    "trigger_interval_ms_if_equal": null,
+    "payload_format": "HL7v2",
+    "framing": "MLLP",
+    "acknowledgement_semantics": "REQUIRES_HUMAN_REVIEW"
+  },
+  "Rule": {
+    "portable_expressions": "NOT_EXTRACTED",
+    "source_rules": "REQUIRES_HUMAN_REVIEW"
+  },
+  "Operation": [
+    {
+      "id": "OP01",
+      "sequence": 1,
+      "type": "database_read",
+      "semantics_status": "INFERRED_UNVERIFIED",
+      "ordering_status": "NOT_ESTABLISHED",
+      "dependencyRef": "DEP01"
+    },
+    {
+      "id": "OP02",
+      "sequence": 2,
+      "type": "message_send",
+      "semantics_status": "INFERRED_UNVERIFIED",
+      "ordering_status": "NOT_ESTABLISHED",
+      "dependencyRef": "DEP02"
+    }
+  ],
+  "Destination": [
+    {
+      "id": "DST02",
+      "kind": "message_send",
+      "status_original": "ENABLED_IN_BOTH_AS_CATEGORY",
+      "binding": "PRIVATE:DEPENDENCY_02",
+      "semantics_status": "UNVERIFIED"
+    }
+  ],
+  "Channel": {
+    "functional_intent_equivalence": "ASSUMED_AS_EXPERIMENT_PRECONDITION_NOT_VERIFIED",
+    "operation_order": "NOT_ESTABLISHED",
+    "concurrency": "NOT_ESTABLISHED"
+  },
+  "Dependency": [
+    {
+      "id": "DEP01",
+      "role": "database_read"
+    },
+    {
+      "id": "DEP02",
+      "role": "message_send"
+    }
+  ],
+  "BehaviorContract": {
+    "status": "CANDIDATE_NOT_TESTABLE",
+    "required_effects": [
+      "CANDIDATE ONLY — Read data from a logical external data source (exact query and cardinality require review)",
+      "CANDIDATE ONLY — Transmit a message to a logical destination (protocol and response require review)"
+    ],
+    "forbidden_effects": [],
+    "ordering": "UNKNOWN",
+    "errors": "UNKNOWN",
+    "idempotency": "UNKNOWN",
+    "acknowledgement": "UNKNOWN"
+  },
+  "ConformanceCases": {
+    "status": "NOT_EXECUTED",
+    "cases": [],
+    "evidence": []
+  },
+  "KnownLimitations": [
+    "Assumed functional intent equivalence is a precondition and not evidence of equivalence.",
+    "Common effect categories are preliminary; identical types do not establish identical semantics.",
+    "Operation sequence numbers are presentation indices, NOT verified execution order.",
+    "Static XML exports cannot establish delivery, state transitions or end-to-end behavior.",
+    "Original business rules, mappings, schemas, destination identity and secrets are not copied into this candidate.",
+    "Explicitly missing capability on either side blocks a claim of observed compliance.",
+    "Not executable, not complete, not an approved normative JSON schema.",
+    "This candidate was extracted from the inbound HL7 interface pair, NOT the previously analyzed scheduled interface.",
+    "ESB-B database_write is a classifier-only signal from shared database helper code; its reachability and effect on this interface are NOT established.",
+    "ESB-A includes a disabled database destination; inactive components must not be silently treated as required functional effects.",
+    "Original exports were replaced with redacted evidence views before public release; their omitted code and payloads prevent functional reconstruction."
+  ]
+}
