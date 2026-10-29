@@ -27,6 +27,6 @@
 - **What is not proven:** equivalence, compliance, execution correctness, complete portable semantics, field-level rules, or response/ACK behavior.
 - **Next step:** construct a completely synthetic reference interface and verify observable effects and ACK/failure behavior under identical test stimuli on independent implementations.
 
-The profile and data fields remain **proposed**; PIIS JSON Schema 0.1 is only a structural review schema. See [the public review](../../../issues/4), [schema proposal](../../../proposals/json-pfd-0.1/README.md), and [PIIS Working Draft 02](../../../drafts/PIIS_Working_Draft_02_EN.md).
+The profile and data fields remain **proposed**; PIIS JSON Schema 0.1 is only a structural review schema. See [the public review](https://github.com/rrlarenas/PIIS/issues/4), [schema proposal](../../proposals/json-pfd-0.1/README.md), and [PIIS Working Draft 02](../../drafts/PIIS_Working_Draft_02_EN.md).
 
 **Data handling:** do not publish original exports, private binding values, scripts, real messages or organization-specific mappings. The two public XML artifacts intentionally contain no vendor brand names. Do not assume that automatic anonymization alone is an approval to disclose third-party IP.
