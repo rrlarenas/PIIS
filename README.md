@@ -19,6 +19,7 @@
 | [Sample 01 — Anonymized clinical DFT interface](samples/clinical-dft-draft01/README.md) | English / Spanish | **Exploratory PFD; not executable or conformance-tested** |
 | [Sample 02 — Anonymized financial-document integration](samples/tax-documents-draft01/README.md) | English / Spanish | **Exploratory JSON PFD; conformance not demonstrated** |
 | [PIIS JSON PFD Proposal 0.1](proposals/json-pfd-0.1/README.md) | English | **First public structural schema proposal; open review, not normative** |
+| [Experiment 01 — ESB-A / ESB-B anonymized HL7 pair](experiments/esb-a-esb-b-hl7-01/README.md) | English | **Redacted XML evidence, candidate PIIS.json and static report; not conformance-tested** |
 | [Research and prior work](docs/PRIOR_WORK.md) | English | Comparison agenda |
 | [Contributing](CONTRIBUTING.md) | English | Review and contribution rules |
 | [Citation metadata](CITATION.cff) | English | Attribution and release metadata |
