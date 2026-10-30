@@ -1,0 +1,1173 @@
+{
+  "piis_document": {
+    "kind": "PortableFunctionalDefinition",
+    "working_profile": "PIIS-ESB-comparison/0.1-exploratory",
+    "schema_status": "PROPOSED_NOT_STANDARDIZED",
+    "semantic_status": "PARTIAL_STATIC_EXTRACTION",
+    "conformance_status": "NOT_DEMONSTRATED",
+    "language": "en",
+    "source_of_truth": "static_export_comparison_under_declared_equivalence_of_functional_intent"
+  },
+  "Identity": {
+    "id": "PIIS-CANDIDATE-ESB-03",
+    "title": "Multi-interface candidate from two architecture paradigms",
+    "version": "0.1-candidate",
+    "normative": false,
+    "anonymized": true,
+    "workload_executed": false
+  },
+  "ExternalStandards": {
+    "status": "NOT_NORMATIVELY_PROFILED",
+    "accepted_as_is": [
+      "HL7 v2",
+      "MLLP",
+      "TCP",
+      "HTTP",
+      "SOAP",
+      "SQL",
+      "JSON",
+      "XML"
+    ],
+    "redefines_existing_standards": false
+  },
+  "Source": {
+    "id": "S-AGGREGATE",
+    "kind": "multi_flow_configuration",
+    "flow_count": 14,
+    "per_flow_inputs": "FlowCandidates[].esb_a.source_kind",
+    "literal_endpoint_data_included": false
+  },
+  "Rule": {
+    "portable_expressions": "NOT_EXTRACTED",
+    "cross_engine_rule_equivalence": "NOT_DEMONSTRATED",
+    "ack_and_exception_semantics": "REQUIRES_TESTS"
+  },
+  "Operation": [
+    {
+      "id": "OP-FLOW-01",
+      "sequence": 1,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-01",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-02",
+      "sequence": 2,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-02",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-03",
+      "sequence": 3,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-03",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-04",
+      "sequence": 4,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-04",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-05",
+      "sequence": 5,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-05",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-06",
+      "sequence": 6,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-06",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-07",
+      "sequence": 7,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-07",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-08",
+      "sequence": 8,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-08",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-09",
+      "sequence": 9,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-09",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-10",
+      "sequence": 10,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-10",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-11",
+      "sequence": 11,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-11",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-12",
+      "sequence": 12,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-12",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-13",
+      "sequence": 13,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-13",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    },
+    {
+      "id": "OP-FLOW-14",
+      "sequence": 14,
+      "type": "flow_candidate",
+      "flowRef": "FLOW-14",
+      "presentation_order_only": true,
+      "portable_expression_semantics": "NOT_DEFINED",
+      "observable_order": "UNVERIFIED"
+    }
+  ],
+  "Destination": [
+    {
+      "id": "DST-01-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-01-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-02-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-02-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-02-02",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-02-02",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-02-03",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-02-03",
+      "transport_kind": "http",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-03-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-03-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-04-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-04-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-05-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-05-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-05-02",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-05-02",
+      "transport_kind": "http",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-06-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-06-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-07-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-07-01",
+      "transport_kind": "http",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-08-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-08-01",
+      "transport_kind": "soap",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-09-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-09-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-10-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-10-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-11-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-11-01",
+      "transport_kind": "http",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-12-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-12-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-12-02",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-12-02",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-13-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-13-01",
+      "transport_kind": "http",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-14-01",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-14-01",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    },
+    {
+      "id": "DST-14-02",
+      "kind": "external_effect",
+      "status_original": "ESB_A_ENABLED_ESB_B_DEPLOYMENT_DISABLED",
+      "binding": "PRIVATE:DESTINATION_DST-14-02",
+      "transport_kind": "tcp",
+      "observable_result": "NOT_VERIFIED"
+    }
+  ],
+  "Channel": {
+    "functional_intent_equivalence": "ASSUMED_AS_PRECONDITION_NOT_VERIFIED",
+    "flows": 14,
+    "runtime_enabled_esb_b_flow_items": 0,
+    "execution_order": "NOT_ESTABLISHED",
+    "routing_and_parallelism": "NOT_ESTABLISHED"
+  },
+  "Dependency": [
+    {
+      "id": "DEP-DST-01-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-01-01"
+    },
+    {
+      "id": "DEP-DST-02-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-02-01"
+    },
+    {
+      "id": "DEP-DST-02-02",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-02-02"
+    },
+    {
+      "id": "DEP-DST-02-03",
+      "role": "logical_http_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-02-03"
+    },
+    {
+      "id": "DEP-DST-03-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-03-01"
+    },
+    {
+      "id": "DEP-DST-04-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-04-01"
+    },
+    {
+      "id": "DEP-DST-05-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-05-01"
+    },
+    {
+      "id": "DEP-DST-05-02",
+      "role": "logical_http_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-05-02"
+    },
+    {
+      "id": "DEP-DST-06-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-06-01"
+    },
+    {
+      "id": "DEP-DST-07-01",
+      "role": "logical_http_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-07-01"
+    },
+    {
+      "id": "DEP-DST-08-01",
+      "role": "logical_soap_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-08-01"
+    },
+    {
+      "id": "DEP-DST-09-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-09-01"
+    },
+    {
+      "id": "DEP-DST-10-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-10-01"
+    },
+    {
+      "id": "DEP-DST-11-01",
+      "role": "logical_http_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-11-01"
+    },
+    {
+      "id": "DEP-DST-12-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-12-01"
+    },
+    {
+      "id": "DEP-DST-12-02",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-12-02"
+    },
+    {
+      "id": "DEP-DST-13-01",
+      "role": "logical_http_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-13-01"
+    },
+    {
+      "id": "DEP-DST-14-01",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-14-01"
+    },
+    {
+      "id": "DEP-DST-14-02",
+      "role": "logical_tcp_endpoint",
+      "binding": "PRIVATE:DEPENDENCY_DST-14-02"
+    }
+  ],
+  "BehaviorContract": {
+    "status": "CANDIDATE_NOT_TESTABLE",
+    "required_effects": [
+      "CANDIDATE: FLOW-01 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-02 has 3 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-03 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-04 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-05 has 2 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-06 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-07 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-08 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-09 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-10 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-11 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-12 has 2 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-13 has 1 logical output(s); exact conditions, payload and runtime effects require review",
+      "CANDIDATE: FLOW-14 has 2 logical output(s); exact conditions, payload and runtime effects require review"
+    ],
+    "forbidden_effects": [],
+    "failures_and_recovery": "NOT_ESTABLISHED",
+    "acknowledgements": "NOT_ESTABLISHED",
+    "timing_and_ordering": "NOT_ESTABLISHED"
+  },
+  "ConformanceCases": {
+    "status": "NOT_EXECUTED",
+    "cases": [
+      {
+        "id": "TC-01",
+        "scenario": "Synthetic accepted HL7 input on a selected MLLP flow",
+        "expected": "Define exact transformed output, recipient selection and ACK before execution"
+      },
+      {
+        "id": "TC-02",
+        "scenario": "Synthetic rejected HL7 input on a filtered flow",
+        "expected": "Define suppression, error response and persistence effects before execution"
+      },
+      {
+        "id": "TC-03",
+        "scenario": "Synthetic scheduled poll returning no rows",
+        "expected": "Define request, output suppression and status behavior before execution"
+      },
+      {
+        "id": "TC-04",
+        "scenario": "Outbound SOAP operation invoked with synthetic financial data",
+        "expected": "ESB-B currently lacks implementation; cannot pass until corrected and verified"
+      },
+      {
+        "id": "TC-05",
+        "scenario": "Synthetic delivery failure and retry boundary",
+        "expected": "Define ACK, queue, retry, timeout and downstream effect obligations before execution"
+      }
+    ],
+    "evidence": []
+  },
+  "FlowCandidates": [
+    {
+      "id": "FLOW-01",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "MSH.10",
+          "MSH.12",
+          "MSH.9"
+        ],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 1,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 1,
+        "routing_rule_count": 0,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": [
+          "MSH.10",
+          "MSH.12",
+          "MSH.9"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-01-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-02",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "PID.3",
+          "PV1.19",
+          "PV1.3"
+        ],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 1,
+        "destination_count": 3,
+        "enabled_destination_count": 3
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 5,
+        "enabled_production_item_count": 0,
+        "process_count": 0,
+        "routing_rule_count": 1,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "PID.3",
+          "PV1.19",
+          "PV1.3"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-02-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        },
+        {
+          "id": "DST-02-02",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        },
+        {
+          "id": "DST-02-03",
+          "kind": "http",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-03",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "OBR.4"
+        ],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 1,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 0,
+        "routing_rule_count": 1,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "OBR.4"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-03-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-04",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "OBR.18"
+        ],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 1,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 0,
+        "routing_rule_count": 1,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "OBR.18"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-04-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-05",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "OBR.3",
+          "OBX.3",
+          "OBX.5",
+          "OBX.6",
+          "PID.3"
+        ],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 1,
+        "destination_count": 2,
+        "enabled_destination_count": 2
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 4,
+        "enabled_production_item_count": 0,
+        "process_count": 1,
+        "routing_rule_count": 0,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "OBR.3",
+          "OBX.3",
+          "OBX.5",
+          "OBX.6",
+          "PID.3"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-05-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        },
+        {
+          "id": "DST-05-02",
+          "kind": "http",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-06",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "PID.3"
+        ],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 1,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 0,
+        "routing_rule_count": 1,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": [
+          "MSH.9",
+          "PID.3"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-06-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-07",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "http",
+        "source_enabled": true,
+        "observed_hl7_field_references": [],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 0,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 1,
+        "routing_rule_count": 0,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": []
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-07-01",
+          "kind": "http",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-08",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "FT1.10",
+          "FT1.11",
+          "FT1.4",
+          "FT1.7",
+          "MSH.9",
+          "PID.3",
+          "PV1.19"
+        ],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 1,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 1,
+        "routing_rule_count": 0,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 1,
+        "observed_hl7_field_references": [
+          "FT1.10",
+          "FT1.11",
+          "FT1.4",
+          "FT1.7",
+          "MSH.9",
+          "PID.3",
+          "PV1.19"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-08-01",
+          "kind": "soap",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-09",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "http",
+        "source_enabled": true,
+        "observed_hl7_field_references": [],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 0,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 1,
+        "routing_rule_count": 0,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": []
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-09-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-10",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "database",
+        "source_enabled": true,
+        "observed_hl7_field_references": [],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 0,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 1,
+        "routing_rule_count": 0,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": []
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-10-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-11",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "database",
+        "source_enabled": true,
+        "observed_hl7_field_references": [],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 0,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 1,
+        "routing_rule_count": 0,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": []
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-11-01",
+          "kind": "http",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-12",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "MSH.9"
+        ],
+        "source_transform_step_count": 0,
+        "source_filter_rule_count": 1,
+        "destination_count": 2,
+        "enabled_destination_count": 2
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 4,
+        "enabled_production_item_count": 0,
+        "process_count": 0,
+        "routing_rule_count": 1,
+        "transform_class_count": 0,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": [
+          "MSH.9"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-12-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        },
+        {
+          "id": "DST-12-02",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-13",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "http",
+        "source_enabled": true,
+        "observed_hl7_field_references": [],
+        "source_transform_step_count": 1,
+        "source_filter_rule_count": 0,
+        "destination_count": 1,
+        "enabled_destination_count": 1
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 3,
+        "enabled_production_item_count": 0,
+        "process_count": 1,
+        "routing_rule_count": 0,
+        "transform_class_count": 1,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": []
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-13-01",
+          "kind": "http",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-14",
+      "functional_intent_equivalence": "ASSUMED_PRECONDITION_NOT_VERIFIED",
+      "esb_a": {
+        "source_kind": "tcp",
+        "source_enabled": true,
+        "observed_hl7_field_references": [
+          "MSH.9"
+        ],
+        "source_transform_step_count": 0,
+        "source_filter_rule_count": 1,
+        "destination_count": 2,
+        "enabled_destination_count": 2
+      },
+      "esb_b": {
+        "category_match": "INDEX_AND_PROVENANCE_COMMENT_MATCH",
+        "production_item_count": 4,
+        "enabled_production_item_count": 0,
+        "process_count": 0,
+        "routing_rule_count": 1,
+        "transform_class_count": 0,
+        "manual_implementation_class_count": 0,
+        "observed_hl7_field_references": [
+          "MSH.9"
+        ]
+      },
+      "hl7_field_reference_review": {
+        "only_in_esb_a": [],
+        "only_in_esb_b": [],
+        "interpretation": "LEXICAL_REFERENCE_ONLY_NO_BEHAVIORAL_COMPARISON"
+      },
+      "effect_semantics": "PARTIAL_STATIC_EXTRACTION",
+      "implementation_equivalence": "NOT_DEMONSTRATED",
+      "destinations": [
+        {
+          "id": "DST-14-01",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        },
+        {
+          "id": "DST-14-02",
+          "kind": "tcp",
+          "esb_a_enabled": true,
+          "esb_a_transform_step_count": 0,
+          "esb_a_filter_rule_count": 0,
+          "esb_b_destination_mapping": "UNRESOLVED_INDIVIDUAL_ITEM"
+        }
+      ]
+    }
+  ],
+  "KnownLimitations": [
+    "Assumed functional outcome equivalence is a study precondition, not a verified result.",
+    "ESB-B is a generated conversion, not an independent implementation.",
+    "All mapped integration items are marked disabled in ESB-B export; one auxiliary service is enabled.",
+    "An outbound SOAP implementation remains manually incomplete.",
+    "No source scripts, SQL, message templates, passwords, endpoint locations, channel names or patient data were copied.",
+    "Field-level transformations, decision/routing semantics, correlation and external contract equivalence remain unresolved.",
+    "Top-level Operation sequence denotes flow presentation order, not execution ordering.",
+    "Some candidate destination effect categories are too coarse to demonstrate equivalence.",
+    "This candidate is structurally informative, not directly executable and not conformance tested.",
+    "JSON Schema validation is separate from executable PIIS semantics and runtime conformance."
+  ]
+}
