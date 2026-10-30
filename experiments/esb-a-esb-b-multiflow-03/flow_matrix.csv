@@ -1,0 +1,15 @@
+flow,esb_a_source,esb_a_source_enabled,esb_a_source_transform_steps,esb_a_filter_rules,esb_a_destination_count,esb_a_destination_types,esb_b_production_item_count,esb_b_enabled_items,esb_b_process_count,esb_b_routing_rule_count,esb_b_transform_class_count,esb_b_manual_incomplete_class_count,hl7_field_reference_sets_match,conformance
+FLOW-01,tcp,True,1,1,1,tcp,3,0,1,0,1,0,True,NOT_DEMONSTRATED
+FLOW-02,tcp,True,1,1,3,tcp;tcp;http,5,0,0,1,1,0,True,NOT_DEMONSTRATED
+FLOW-03,tcp,True,1,1,1,tcp,3,0,0,1,1,0,True,NOT_DEMONSTRATED
+FLOW-04,tcp,True,1,1,1,tcp,3,0,0,1,1,0,True,NOT_DEMONSTRATED
+FLOW-05,tcp,True,1,1,2,tcp;http,4,0,1,0,1,0,True,NOT_DEMONSTRATED
+FLOW-06,tcp,True,1,1,1,tcp,3,0,0,1,1,0,True,NOT_DEMONSTRATED
+FLOW-07,http,True,1,0,1,http,3,0,1,0,1,0,True,NOT_DEMONSTRATED
+FLOW-08,tcp,True,1,1,1,soap,3,0,1,0,1,1,True,NOT_DEMONSTRATED
+FLOW-09,http,True,1,0,1,tcp,3,0,1,0,1,0,True,NOT_DEMONSTRATED
+FLOW-10,database,True,1,0,1,tcp,3,0,1,0,1,0,True,NOT_DEMONSTRATED
+FLOW-11,database,True,1,0,1,http,3,0,1,0,1,0,True,NOT_DEMONSTRATED
+FLOW-12,tcp,True,0,1,2,tcp;tcp,4,0,0,1,0,0,True,NOT_DEMONSTRATED
+FLOW-13,http,True,1,0,1,http,3,0,1,0,1,0,True,NOT_DEMONSTRATED
+FLOW-14,tcp,True,0,1,2,tcp;tcp,4,0,0,1,0,0,True,NOT_DEMONSTRATED
