@@ -18,6 +18,7 @@
 | `review_report.json` | Hallazgos observables de configuración, trazabilidad de correspondencias, salvedades y acciones globales pendientes declaradas por el conversor |
 | `flow_matrix.csv` | Matriz de correspondencia sintética y prioridades de revisión por interfaz |
 | `SQL_ANALYSIS.md` | Convenciones para anonimizar consultas SQL, niveles de extracción y limitaciones de las consultas dinámicas |
+| `SQL_EVIDENCE.csv` | 263 consultas o fragmentos SQL anonimizados con referencia sintética a flujo y componente; revisables sin publicar XML originales |
 | `validate_outputs.py` | Validaciones de integridad de los artefactos, **no** prueba de conformidad funcional |
 
 ## Lectura crítica
@@ -26,7 +27,7 @@ El número de componentes no puede compararse 1:1 con el número de canales: las
 
 Las cantidades de tareas manuales, ajustes de entorno y verificaciones se toman de la declaración de ESB-B; **no acreditan tareas realizadas**. Los indicadores de lenguaje y rutas de campos estandarizados son pistas lexicográficas, no equivalencias semánticas. Diferencias de campos referenciados no son automáticamente errores.
 
-El `PIIS.json` incluye `SQLEvidence` con consultas SQL anonimizadas y referencias por flujo. Los fragmentos reconstruidos a partir de scripts se identifican como incompletos; no se trata de SQL ejecutable ni de pruebas de comportamiento.
+El análisis SQL se conserva en `SQL_EVIDENCE.csv`, relacionado con las 136 interfaces del `PIIS.json` mediante `flow_ref` y `component_ref`. El esquema exploratorio de `PIIS.json` aún no incorpora una representación SQL normativa. Los fragmentos extraídos de scripts se identifican como incompletos; no constituyen SQL ejecutable ni pruebas de comportamiento.
 
 El `PIIS.json` conserva `NOT_DEMONSTRATED` y la lista de pruebas es solo una propuesta. **El esquema PIIS 0.1 valida la estructura básica del documento, no el contenido funcional ni un contrato observable verificable.**
 
