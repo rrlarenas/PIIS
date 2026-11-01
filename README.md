@@ -21,6 +21,7 @@
 | [PIIS JSON PFD Proposal 0.1](proposals/json-pfd-0.1/README.md) | English | **First public structural schema proposal; open review, not normative** |
 | [Experiment 01 — ESB-A / ESB-B anonymized HL7 pair](experiments/esb-a-esb-b-hl7-01/README.md) | English | **Redacted XML evidence, candidate PIIS.json and static report; not conformance-tested** |
 | [Experiment 04 — ESB-A / ESB-B anonymized real-installation case](experiments/esb-a-esb-b-real-installation-04/README.md) | Spanish | **136 candidate flows; outstanding manual actions; functional equivalence not asserted** |
+| [Experiment 05 — Anonymized SQL analysis for ESB-A / ESB-B](experiments/esb-a-esb-b-sql-05/README.md) | Spanish | **263 SQL records in 75 flows; 44 configured queries, 219 script fragments; not executable or conformance-tested** |
 | [Research and prior work](docs/PRIOR_WORK.md) | English | Comparison agenda |
 | [Contributing](CONTRIBUTING.md) | English | Review and contribution rules |
 | [Citation metadata](CITATION.cff) | English | Attribution and release metadata |
