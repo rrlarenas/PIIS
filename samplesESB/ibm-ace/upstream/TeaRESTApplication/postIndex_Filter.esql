@@ -1,0 +1,15 @@
+
+-- Copyright (c) 2020 Open Technologies for Integration
+-- Licensed under the MIT license (see LICENSE for details)
+
+CREATE FILTER MODULE postIndex_Filter
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		IF Root.JSON.Data.milk IS NOT NULL THEN
+			RETURN TRUE;
+		ELSE	
+			RETURN FALSE;
+		END IF;
+	END;
+
+END MODULE;

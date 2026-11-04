@@ -1,0 +1,7 @@
+{
+  "case_ref": "case-03",
+  "reference_scope": "ARTIFACT_LOCAL",
+  "identifiers": "SYNTHETIC_NO_REVERSIBLE_MAPPING",
+  "queries": [],
+  "absence_means": "NO_SQL_TEXT_DETECTED_IN_INSPECTED_ARTIFACTS_NOT_PROOF_OF_NO_DATABASE_EFFECTS"
+}

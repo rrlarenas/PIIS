@@ -1,0 +1,510 @@
+{
+  "sources": [
+    {
+      "engine": "rhapsody",
+      "repository": "https://github.com/CDCgov/NEDSS-DataIngestion",
+      "commit": "295871912c017aa1c6459c0a272e5210d03383ee",
+      "license": "Apache-2.0",
+      "retrieved_on": "2026-11-04",
+      "modified": false,
+      "selection": "Fuentes seleccionadas; se omiten binarios y capturas. No es un paquete de despliegue.",
+      "files": [
+        {
+          "path": "rhapsody/upstream/LICENSE",
+          "upstream_path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/CDCgov/NEDSS-DataIngestion/295871912c017aa1c6459c0a272e5210d03383ee/LICENSE",
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "rhapsody/upstream/README.md",
+          "upstream_path": "README.md",
+          "url": "https://raw.githubusercontent.com/CDCgov/NEDSS-DataIngestion/295871912c017aa1c6459c0a272e5210d03383ee/README.md",
+          "bytes": 7903,
+          "sha256": "aa6a18c7a51c29bdef968c2ee291644745622f00698739a403aefb3d01de04fb"
+        },
+        {
+          "path": "rhapsody/upstream/data-ingestion-service/src/main/resources/rhapsody/NBS-Data-Ingestion-ELR-Route.rlc",
+          "upstream_path": "data-ingestion-service/src/main/resources/rhapsody/NBS-Data-Ingestion-ELR-Route.rlc",
+          "url": "https://raw.githubusercontent.com/CDCgov/NEDSS-DataIngestion/295871912c017aa1c6459c0a272e5210d03383ee/data-ingestion-service/src/main/resources/rhapsody/NBS-Data-Ingestion-ELR-Route.rlc",
+          "bytes": 7772,
+          "sha256": "58893505dda42667d7bffda63bdf53b09d25cd54b46831c68d1ce9f971a962b4"
+        }
+      ]
+    },
+    {
+      "engine": "ibm-ace",
+      "repository": "https://github.com/ot4i/ace-demo-pipeline",
+      "commit": "9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33",
+      "license": "MIT",
+      "retrieved_on": "2026-11-04",
+      "modified": false,
+      "selection": "Fuentes seleccionadas; se omiten binarios y capturas. No es un paquete de despliegue.",
+      "files": [
+        {
+          "path": "ibm-ace/upstream/LICENSE",
+          "upstream_path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/LICENSE",
+          "bytes": 1090,
+          "sha256": "9333dd32626540137ab79002c07635b9ed20423249fd51bfceeef33d60a4a6a7"
+        },
+        {
+          "path": "ibm-ace/upstream/README.md",
+          "upstream_path": "README.md",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/README.md",
+          "bytes": 9307,
+          "sha256": "320df7c6113101327117750970cbd61f0cb8fb4a113a8d16e7941d464a4d73f4"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/.project",
+          "upstream_path": "TeaCallableApplicationV2/.project",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/.project",
+          "bytes": 3259,
+          "sha256": "0fad2974cb10b08d7f5cb1dd9162184961858e97e06de144b2b5c221899a9d34"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/.settings/org.eclipse.core.resources.prefs",
+          "upstream_path": "TeaCallableApplicationV2/.settings/org.eclipse.core.resources.prefs",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/.settings/org.eclipse.core.resources.prefs",
+          "bytes": 57,
+          "sha256": "1a5b17d8a429f89e30d0d5fc6e12e81d37ea8f6f3f4a206383f4af8564292ac0"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/application.descriptor",
+          "upstream_path": "TeaCallableApplicationV2/application.descriptor",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/application.descriptor",
+          "bytes": 314,
+          "sha256": "c09af796689bfb2eaa400f87370c4bc8fcc85fb83a99ce23db007769f652c54b"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/get.index.input.schema.json",
+          "upstream_path": "TeaCallableApplicationV2/get.index.input.schema.json",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/get.index.input.schema.json",
+          "bytes": 296,
+          "sha256": "87145749d9ed7369c3a71c1fc334e06c95dbe7bbbf9bb9c184ba8fcb596cdb0d"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/get.index.reply.schema.json",
+          "upstream_path": "TeaCallableApplicationV2/get.index.reply.schema.json",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/get.index.reply.schema.json",
+          "bytes": 302,
+          "sha256": "fe11d36d2b8d4c2c770f735f139c27b5a7cae183548b873596bad41ce6d89524"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/getIndex.msgflow",
+          "upstream_path": "TeaCallableApplicationV2/getIndex.msgflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/getIndex.msgflow",
+          "bytes": 3245,
+          "sha256": "4bf4a6ac7871aba2bc47c6ea1a157538022796ad74b383e500f64faea7c394af"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/post.index.input.schema.json",
+          "upstream_path": "TeaCallableApplicationV2/post.index.input.schema.json",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/post.index.input.schema.json",
+          "bytes": 318,
+          "sha256": "041269c77fda8d20db58c0c866fffbc09a0ddea3b4131ecfab230aeec595e213"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/post.index.reply.schema.json",
+          "upstream_path": "TeaCallableApplicationV2/post.index.reply.schema.json",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/post.index.reply.schema.json",
+          "bytes": 259,
+          "sha256": "233bec1a6906c5229eaad917a18b7edb2787362bc25e4ca09d5be09f5b855d12"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaCallableApplicationV2/postIndex.msgflow",
+          "upstream_path": "TeaCallableApplicationV2/postIndex.msgflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaCallableApplicationV2/postIndex.msgflow",
+          "bytes": 2705,
+          "sha256": "1c073679dddbca69dcc88e5cfa158fe432ed071fd0fd066cbfb2f7e09aece6ea"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/.project",
+          "upstream_path": "TeaRESTApplication/.project",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/.project",
+          "bytes": 3543,
+          "sha256": "bc2cb11061e8498724ac6c4a18dd92f37144e9a306cec2b5e40cc9862652cf71"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/.settings/org.eclipse.m2e.core.prefs",
+          "upstream_path": "TeaRESTApplication/.settings/org.eclipse.m2e.core.prefs",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/.settings/org.eclipse.m2e.core.prefs",
+          "bytes": 86,
+          "sha256": "73e2bc42062725b3acdddce7ca0cdda43ec65574ed30391ea2d6fabdc269e0e4"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/README.md",
+          "upstream_path": "TeaRESTApplication/README.md",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/README.md",
+          "bytes": 1179,
+          "sha256": "7a244a279488ffb4d14322bdec3bc0d31a56749e98da10e4994b307efd988c6d"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/build.xml",
+          "upstream_path": "TeaRESTApplication/build.xml",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/build.xml",
+          "bytes": 915,
+          "sha256": "e323274c62bd8f58daa2adc0c5fd5641776e023262a901a1b96cec35c724c86b"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/gen/TeaRESTApplication.msgflow",
+          "upstream_path": "TeaRESTApplication/gen/TeaRESTApplication.msgflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/gen/TeaRESTApplication.msgflow",
+          "bytes": 4073,
+          "sha256": "482697122e2b4b6a5e3b041fca93041db2910c38c8194296800dab57a791a10c"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/getIndex.subflow",
+          "upstream_path": "TeaRESTApplication/getIndex.subflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/getIndex.subflow",
+          "bytes": 2187,
+          "sha256": "3e17871c8e293ae06fc5368bf7dd99f297f3795086f61a48d0681f16a6cbdb96"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/oldToNew_Mapping.map",
+          "upstream_path": "TeaRESTApplication/oldToNew_Mapping.map",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/oldToNew_Mapping.map",
+          "bytes": 2664,
+          "sha256": "53b0eed3f431226f363a178e0a886fc26332e41000129b4e2a3f687e70cb933b"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/pom.xml",
+          "upstream_path": "TeaRESTApplication/pom.xml",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/pom.xml",
+          "bytes": 3661,
+          "sha256": "b673e54105585852de7a7bc69a7d909d02d73b82255038b91eec432f60a4f19d"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/postIndex.subflow",
+          "upstream_path": "TeaRESTApplication/postIndex.subflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/postIndex.subflow",
+          "bytes": 3680,
+          "sha256": "57c376f6526e58ad114854e8304a2ffabd71a44e8e86ee26e699a3bd682be1c5"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/postIndex_Filter.esql",
+          "upstream_path": "TeaRESTApplication/postIndex_Filter.esql",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/postIndex_Filter.esql",
+          "bytes": 315,
+          "sha256": "d4c4cce0b2bfb8bc353ff2e569c4a45d3a07d5c64ca9750252382a4c9c4eb74a"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/restapi.descriptor",
+          "upstream_path": "TeaRESTApplication/restapi.descriptor",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/restapi.descriptor",
+          "bytes": 633,
+          "sha256": "07b07dfbacec1d17d5e3388e5018b7a4012794482bd5322bb663e40514b92aa9"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaRESTApplication/swagger.json",
+          "upstream_path": "TeaRESTApplication/swagger.json",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaRESTApplication/swagger.json",
+          "bytes": 2027,
+          "sha256": "d67efa3b2738ea94e0d74a20bcc0320e686590e01ffb223759c123dae5aee7a5"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/.gitignore",
+          "upstream_path": "TeaSharedLibrary/.gitignore",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/.gitignore",
+          "bytes": 9,
+          "sha256": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/.project",
+          "upstream_path": "TeaSharedLibrary/.project",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/.project",
+          "bytes": 3840,
+          "sha256": "31e3849e474cfa271d53be2fe3c7e7fc9bb308023818ff86eeef4de6238c26eb"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/.settings/org.eclipse.m2e.core.prefs",
+          "upstream_path": "TeaSharedLibrary/.settings/org.eclipse.m2e.core.prefs",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/.settings/org.eclipse.m2e.core.prefs",
+          "bytes": 86,
+          "sha256": "73e2bc42062725b3acdddce7ca0cdda43ec65574ed30391ea2d6fabdc269e0e4"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/README.md",
+          "upstream_path": "TeaSharedLibrary/README.md",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/README.md",
+          "bytes": 154,
+          "sha256": "05d8c1320113c0499671b089d8ed4193bd0b3ee3792c2e5e24438150311c64dc"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/TeaSharedLibrary/GetFromDB.subflow",
+          "upstream_path": "TeaSharedLibrary/TeaSharedLibrary/GetFromDB.subflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/TeaSharedLibrary/GetFromDB.subflow",
+          "bytes": 2321,
+          "sha256": "1c5fec9b2b4fdf75d54afd0ce6d2e29ed2246620a71eefee59b9b753159bcb8c"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/TeaSharedLibrary/LogAuditData.subflow",
+          "upstream_path": "TeaSharedLibrary/TeaSharedLibrary/LogAuditData.subflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/TeaSharedLibrary/LogAuditData.subflow",
+          "bytes": 3384,
+          "sha256": "bfb4eba679cb0cf0feb9f85dd5bd43d388845eea1e748e78e42c41c9d9fa9b23"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/TeaSharedLibrary/LogAuditData_Compute.esql",
+          "upstream_path": "TeaSharedLibrary/TeaSharedLibrary/LogAuditData_Compute.esql",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/TeaSharedLibrary/LogAuditData_Compute.esql",
+          "bytes": 772,
+          "sha256": "a47c66e5fac8cb369e8d86ac69ee00920f151ca52fdc6378ef18db5075febccc"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/TeaSharedLibrary/LogAuditData_RemoveXML.esql",
+          "upstream_path": "TeaSharedLibrary/TeaSharedLibrary/LogAuditData_RemoveXML.esql",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/TeaSharedLibrary/LogAuditData_RemoveXML.esql",
+          "bytes": 638,
+          "sha256": "8d4323eb2e961898f25e801b9210f4ae7f680c3ba6b98945eb4ce4c33cdc79e8"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/TeaSharedLibrary/UpdateDB.subflow",
+          "upstream_path": "TeaSharedLibrary/TeaSharedLibrary/UpdateDB.subflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/TeaSharedLibrary/UpdateDB.subflow",
+          "bytes": 2307,
+          "sha256": "6b827d20b66c8779751c1de44ffb42a68a0d127c29c623a5ac3015cceca51613"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/TeaSharedLibrary/getIndexImpl.subflow",
+          "upstream_path": "TeaSharedLibrary/TeaSharedLibrary/getIndexImpl.subflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/TeaSharedLibrary/getIndexImpl.subflow",
+          "bytes": 2797,
+          "sha256": "52b893f88794b2026993739dfcfa14196887e20891589d3be3852ca60fd43082"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/TeaSharedLibrary/postIndexImpl.subflow",
+          "upstream_path": "TeaSharedLibrary/TeaSharedLibrary/postIndexImpl.subflow",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/TeaSharedLibrary/postIndexImpl.subflow",
+          "bytes": 2801,
+          "sha256": "e67f6933444cc1043008f184975efbd1d03ca2f2931d7077b363228106660303"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/library.descriptor",
+          "upstream_path": "TeaSharedLibrary/library.descriptor",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/library.descriptor",
+          "bytes": 270,
+          "sha256": "ccc3cbc7efb54e90f36a155ee08354b5e1d2a3b38bc7d1962ef4567a83639140"
+        },
+        {
+          "path": "ibm-ace/upstream/TeaSharedLibrary/pom.xml",
+          "upstream_path": "TeaSharedLibrary/pom.xml",
+          "url": "https://raw.githubusercontent.com/ot4i/ace-demo-pipeline/9a28f4980cefdde46a8ba1aa4e8873bdf1aa8e33/TeaSharedLibrary/pom.xml",
+          "bytes": 4310,
+          "sha256": "c1293991910a3b40964b75ccdd1e23618c7ffaffc05da577e959cca726303a95"
+        }
+      ]
+    },
+    {
+      "engine": "apache-camel",
+      "repository": "https://github.com/apache/camel-examples",
+      "commit": "869cde2a332ab6108572af0b1f93923bc3fc9768",
+      "license": "Apache-2.0",
+      "retrieved_on": "2026-11-04",
+      "modified": false,
+      "selection": "Fuentes seleccionadas; se omiten binarios y capturas. No es un paquete de despliegue.",
+      "files": [
+        {
+          "path": "apache-camel/upstream/LICENSE.txt",
+          "upstream_path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/LICENSE.txt",
+          "bytes": 11359,
+          "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac"
+        },
+        {
+          "path": "apache-camel/upstream/NOTICE.txt",
+          "upstream_path": "NOTICE.txt",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/NOTICE.txt",
+          "bytes": 596,
+          "sha256": "43af28693b143cb76ed17a909ffcf42e03634083e2cf98812a5a2055d0c5e693"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/README.adoc",
+          "upstream_path": "loadbalancing/README.adoc",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/README.adoc",
+          "bytes": 1781,
+          "sha256": "6e42b44427031c45be1b39709f435fc1a3ad426a12b40722d809f87752fa0789"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/pom.xml",
+          "upstream_path": "loadbalancing/pom.xml",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/pom.xml",
+          "bytes": 5277,
+          "sha256": "b25c47608d4ea1a7d1082b1ea03198b861f0659dee0d68a80d24539bbb9bc635"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/java/org/apache/camel/example/model/Report.java",
+          "upstream_path": "loadbalancing/src/main/java/org/apache/camel/example/model/Report.java",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/java/org/apache/camel/example/model/Report.java",
+          "bytes": 2173,
+          "sha256": "dab8296d8c91302ea17b251eb5379815eaf4f4ebe63e8084c8a4a45d44f25132"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/java/org/apache/camel/example/service/Generator.java",
+          "upstream_path": "loadbalancing/src/main/java/org/apache/camel/example/service/Generator.java",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/java/org/apache/camel/example/service/Generator.java",
+          "bytes": 1290,
+          "sha256": "62b6e1123e59654e1c3bbe0692676df92f901833a88207d9dbdcd4bba8db344d"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/java/org/apache/camel/example/service/Reporting.java",
+          "upstream_path": "loadbalancing/src/main/java/org/apache/camel/example/service/Reporting.java",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/java/org/apache/camel/example/service/Reporting.java",
+          "bytes": 1221,
+          "sha256": "e85bceb107b332221004f492105d490c011b96bffd61ae42b356060c6f76d163"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/LICENSE.txt",
+          "upstream_path": "loadbalancing/src/main/resources/META-INF/LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/LICENSE.txt",
+          "bytes": 11359,
+          "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/NOTICE.txt",
+          "upstream_path": "loadbalancing/src/main/resources/META-INF/NOTICE.txt",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/NOTICE.txt",
+          "bytes": 596,
+          "sha256": "43af28693b143cb76ed17a909ffcf42e03634083e2cf98812a5a2055d0c5e693"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-context-loadbalancer.xml",
+          "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-context-loadbalancer.xml",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-context-loadbalancer.xml",
+          "bytes": 1649,
+          "sha256": "1492a374b34dca1e3b48f136173f32f6e53092a5e4d2270f5781828c052256e4"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-context-mina1.xml",
+          "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-context-mina1.xml",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-context-mina1.xml",
+          "bytes": 1909,
+          "sha256": "6b86b9f72cec7c26b2f998b6e465604532933c0e5ecc42462e20d141c74f6451"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-context-mina2.xml",
+          "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-context-mina2.xml",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-context-mina2.xml",
+          "bytes": 1909,
+          "sha256": "e4ebe554839ddc333179a8c00042429a95c53c604189524e9a59c7d62f22ecfc"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-route-context-loadbalancer.xml",
+          "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-route-context-loadbalancer.xml",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-route-context-loadbalancer.xml",
+          "bytes": 1308,
+          "sha256": "2afb465305594079e169c91c9f36a682842857759bb29ea961c5e3920a66880f"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-route-template-mina.xml",
+          "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-route-template-mina.xml",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-route-template-mina.xml",
+          "bytes": 928,
+          "sha256": "00b2f9e68e6d77915fd12bde26471f2659eb24b206b84d3b7dfb7501a56f276e"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/main/resources/log4j2.properties",
+          "upstream_path": "loadbalancing/src/main/resources/log4j2.properties",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/log4j2.properties",
+          "bytes": 1198,
+          "sha256": "c9f56d98987dd602bb7dd6cbe3a3f630fc838e3a39e4d1da4f921e5be4111df1"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/test/java/org/apache/camel/example/LoadBalancingTest.java",
+          "upstream_path": "loadbalancing/src/test/java/org/apache/camel/example/LoadBalancingTest.java",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/test/java/org/apache/camel/example/LoadBalancingTest.java",
+          "bytes": 2214,
+          "sha256": "32e271286769697543f2dfbdf98a8d1521f8b8db56877842de115b1c650e55f4"
+        },
+        {
+          "path": "apache-camel/upstream/loadbalancing/src/test/resources/org/apache/camel/example/test-camel-context.xml",
+          "upstream_path": "loadbalancing/src/test/resources/org/apache/camel/example/test-camel-context.xml",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/test/resources/org/apache/camel/example/test-camel-context.xml",
+          "bytes": 2301,
+          "sha256": "991788fc36af5a35b36d7978c9e1c6517e03a544e7ea07bfe71f2e98be8dd825"
+        },
+        {
+          "path": "apache-camel/upstream/pom.xml",
+          "upstream_path": "pom.xml",
+          "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/pom.xml",
+          "bytes": 22090,
+          "sha256": "363e60cb133490ee6d2eeb03fcc9e27a7c11a451ec1c8264a0b515a1378c5578"
+        }
+      ]
+    },
+    {
+      "engine": "wso2-mi",
+      "repository": "https://github.com/wso2/product-micro-integrator",
+      "commit": "2f73279a4419932472d5b9cd52c9f88fd7fe71d2",
+      "license": "Apache-2.0",
+      "retrieved_on": "2026-11-04",
+      "modified": false,
+      "selection": "Fuentes seleccionadas; se omiten binarios y capturas. No es un paquete de despliegue.",
+      "files": [
+        {
+          "path": "wso2-mi/upstream/LICENSE",
+          "upstream_path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/LICENSE",
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "wso2-mi/upstream/LICENSE.txt",
+          "upstream_path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/LICENSE.txt",
+          "bytes": 47760,
+          "sha256": "324f0e33061686aa5527f982bfc274c412bfc8e9428bf6f32bd5513d04428ac1"
+        },
+        {
+          "path": "wso2-mi/upstream/README.md",
+          "upstream_path": "README.md",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/README.md",
+          "bytes": 5151,
+          "sha256": "0c2d9cf30fb92a660e426fb7555f21d203eec2461af06f163a20eba43d881f87"
+        },
+        {
+          "path": "wso2-mi/upstream/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/api/HelloRestApi.xml",
+          "upstream_path": "integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/api/HelloRestApi.xml",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/api/HelloRestApi.xml",
+          "bytes": 1332,
+          "sha256": "73fd26daf0b1a15175416024542ac0cedbaddf53de710b7964ebea09654614fd"
+        },
+        {
+          "path": "wso2-mi/upstream/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/endpoints/HelloEndPoint.xml",
+          "upstream_path": "integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/endpoints/HelloEndPoint.xml",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/endpoints/HelloEndPoint.xml",
+          "bytes": 1198,
+          "sha256": "06005c6efdc788097219945d33fc27552b1a83ea4e401819784f7d341cb298ea"
+        },
+        {
+          "path": "wso2-mi/upstream/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/local-entries/HelloLocalEntry.xml",
+          "upstream_path": "integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/local-entries/HelloLocalEntry.xml",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/local-entries/HelloLocalEntry.xml",
+          "bytes": 831,
+          "sha256": "d32f7a39e7402fff2615f6a5b79db52bf09242414a681b5f4360457eaa3d58da"
+        },
+        {
+          "path": "wso2-mi/upstream/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/message-processors/HelloMessageProcessor.xml",
+          "upstream_path": "integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/message-processors/HelloMessageProcessor.xml",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/message-processors/HelloMessageProcessor.xml",
+          "bytes": 1460,
+          "sha256": "c95e11b22f906b5388e907aeaf884341a7541aafc246772bfab90c21162fc623"
+        },
+        {
+          "path": "wso2-mi/upstream/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/message-stores/HelloMessageStore.xml",
+          "upstream_path": "integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/message-stores/HelloMessageStore.xml",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/message-stores/HelloMessageStore.xml",
+          "bytes": 876,
+          "sha256": "d2706921fccff560c2aff358faf92c2a51e7bcd4a1ad894f88b27d5344744144"
+        },
+        {
+          "path": "wso2-mi/upstream/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/proxy-services/HelloProxyService.xml",
+          "upstream_path": "integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/proxy-services/HelloProxyService.xml",
+          "url": "https://raw.githubusercontent.com/wso2/product-micro-integrator/2f73279a4419932472d5b9cd52c9f88fd7fe71d2/integration/management-api-tests/src/test/resources/artifacts/ESB/server/repository/deployment/server/synapse-configs/default/proxy-services/HelloProxyService.xml",
+          "bytes": 1724,
+          "sha256": "ed1a96c5e1266f93dfdd6dbdd5f6eb308b1e046112d8dc08f43d23b6d0bdb849"
+        }
+      ]
+    }
+  ]
+}

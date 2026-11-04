@@ -1,0 +1,64 @@
+{
+  "case_ref": "case-01",
+  "reference_scope": "ARTIFACT_LOCAL",
+  "identifiers": "SYNTHETIC_NO_REVERSIBLE_MAPPING",
+  "queries": [
+    {
+      "artifact_ref": "artifact-0001",
+      "source_ref": "query-0001",
+      "operation": "select",
+      "tables": [
+        "table-0001"
+      ],
+      "fields": [
+        {
+          "table_ref": "table-0001",
+          "field_ref": "field-0001"
+        },
+        {
+          "table_ref": "table-0001",
+          "field_ref": "field-0002"
+        }
+      ],
+      "coverage": "PARTIAL_LEXICAL_SINGLE_TABLE",
+      "reachability": "NOT_CHECKED"
+    },
+    {
+      "artifact_ref": "artifact-0001",
+      "source_ref": "query-0002",
+      "operation": "insert",
+      "tables": [
+        "table-0001"
+      ],
+      "fields": [
+        {
+          "table_ref": "table-0001",
+          "field_ref": "field-0001"
+        }
+      ],
+      "coverage": "PARTIAL_LEXICAL_SINGLE_TABLE",
+      "reachability": "NOT_CHECKED"
+    },
+    {
+      "artifact_ref": "artifact-0001",
+      "source_ref": "query-0003",
+      "operation": "insert",
+      "tables": [
+        "table-0002"
+      ],
+      "fields": [
+        {
+          "table_ref": "table-0002",
+          "field_ref": "field-0003"
+        },
+        {
+          "table_ref": "table-0002",
+          "field_ref": "field-0004"
+        }
+      ],
+      "coverage": "PARTIAL_LEXICAL_SINGLE_TABLE",
+      "reachability": "NOT_CHECKED"
+    }
+  ],
+  "absence_means": "NO_SQL_TEXT_DETECTED_IN_INSPECTED_ARTIFACTS_NOT_PROOF_OF_NO_DATABASE_EFFECTS"
+}

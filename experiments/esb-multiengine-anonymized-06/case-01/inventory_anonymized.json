@@ -1,0 +1,165 @@
+{
+  "case_ref": "case-01",
+  "tool_version": "0.2",
+  "functional_conformance": "NOT_DEMONSTRATED",
+  "source_target_coverage": "NOT_CHECKED",
+  "migration_readiness": "REQUIRES_REVIEW",
+  "artifact_count": 1,
+  "excluded": {
+    "auxiliary_or_documentation": 2
+  },
+  "signals": {
+    "opaque_logic": 4,
+    "route": 3,
+    "sql_read_candidate": 1,
+    "sql_write_candidate": 2,
+    "transport": 4
+  },
+  "artifacts": [
+    {
+      "artifact_ref": "artifact-0001",
+      "export": {
+        "profile": "rhapsody-rlc-exploratory",
+        "sha256": "58893505dda42667d7bffda63bdf53b09d25cd54b46831c68d1ce9f971a962b4",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "CommPoint",
+            "category": "transport"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "CommPoint",
+            "category": "transport"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "CommPoint",
+            "category": "transport"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "CommPoint",
+            "category": "transport"
+          },
+          {
+            "source_ref": "component-0005",
+            "element": "Route",
+            "category": "route"
+          },
+          {
+            "source_ref": "component-0006",
+            "element": "Filter",
+            "category": "opaque_logic"
+          },
+          {
+            "source_ref": "component-0007",
+            "element": "Route",
+            "category": "route"
+          },
+          {
+            "source_ref": "component-0008",
+            "element": "Filter",
+            "category": "opaque_logic"
+          },
+          {
+            "source_ref": "component-0009",
+            "element": "Filter",
+            "category": "opaque_logic"
+          },
+          {
+            "source_ref": "component-0010",
+            "element": "Route",
+            "category": "route"
+          },
+          {
+            "source_ref": "component-0011",
+            "element": "Filter",
+            "category": "opaque_logic"
+          }
+        ],
+        "signals": {
+          "opaque_logic": 4,
+          "route": 3,
+          "sql_read_candidate": 1,
+          "sql_write_candidate": 2,
+          "transport": 4
+        },
+        "sql_evidence": [
+          {
+            "source_ref": "query-0001",
+            "operation": "select",
+            "tables": [
+              "table-0001"
+            ],
+            "fields": [
+              {
+                "table_ref": "table-0001",
+                "field_ref": "field-0001"
+              },
+              {
+                "table_ref": "table-0001",
+                "field_ref": "field-0002"
+              }
+            ],
+            "coverage": "PARTIAL_LEXICAL_SINGLE_TABLE",
+            "reachability": "NOT_CHECKED"
+          },
+          {
+            "source_ref": "query-0002",
+            "operation": "insert",
+            "tables": [
+              "table-0001"
+            ],
+            "fields": [
+              {
+                "table_ref": "table-0001",
+                "field_ref": "field-0001"
+              }
+            ],
+            "coverage": "PARTIAL_LEXICAL_SINGLE_TABLE",
+            "reachability": "NOT_CHECKED"
+          },
+          {
+            "source_ref": "query-0003",
+            "operation": "insert",
+            "tables": [
+              "table-0002"
+            ],
+            "fields": [
+              {
+                "table_ref": "table-0002",
+                "field_ref": "field-0003"
+              },
+              {
+                "table_ref": "table-0002",
+                "field_ref": "field-0004"
+              }
+            ],
+            "coverage": "PARTIAL_LEXICAL_SINGLE_TABLE",
+            "reachability": "NOT_CHECKED"
+          }
+        ],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 11
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        },
+        {
+          "code": "SQL_PARTIAL_ANALYSIS",
+          "severity": "warning",
+          "message": "SQL identifiers are replaced by artifact-local synthetic references; expressions, parameters and dynamic SQL remain unresolved."
+        }
+      ]
+    }
+  ]
+}

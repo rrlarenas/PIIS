@@ -6,6 +6,9 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+import zipfile
+
+from adapters import inspect_native
 
 from defusedxml import ElementTree as ET
 from defusedxml.common import DefusedXmlException
@@ -42,7 +45,10 @@ def load_json(data):
     return json.loads(data, object_pairs_hook=pairs, parse_constant=invalid_constant)
 
 
-def inspect_export(data):
+def inspect_export(data, suffix=""):
+    native = inspect_native(data, suffix)
+    if native is not None:
+        return native
     root = ET.fromstring(data, forbid_dtd=True)
     tags = Counter(local(node.tag) for node in root.iter())
     root_tag = local(root.tag)
@@ -89,25 +95,26 @@ def validate_pfd(data):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("export", type=Path, help="ESB XML configuration export")
+    parser.add_argument("export", type=Path, help="ESB XML/XMI, Rhapsody RLC or IBM ESQL artifact")
     parser.add_argument("--piis", type=Path, help="Optional existing PFD JSON to validate structurally")
     parser.add_argument("--output", type=Path, help="Write JSON report (default: stdout)")
     args = parser.parse_args(argv)
     if args.output and args.output.resolve() in {p.resolve() for p in (args.export, args.piis, SCHEMA) if p}:
         parser.error("Output must differ from input and schema paths")
-    report = {"tool_version": "0.1", "functional_conformance": "NOT_DEMONSTRATED",
+    report = {"tool_version": "0.2", "functional_conformance": "NOT_DEMONSTRATED",
               "migration_readiness": "REQUIRES_REVIEW", "source_target_coverage": "NOT_CHECKED",
               "findings": []}
     exit_code = 0
     try:
-        report["export"], report["findings"] = inspect_export(read_bounded(args.export))
+        report["export"], report["findings"] = inspect_export(read_bounded(args.export), args.export.suffix)
         if args.piis:
             report["piis"], _ = validate_pfd(read_bounded(args.piis))
             if report["piis"]["status"] == "INVALID":
                 exit_code = 1
         else:
             report["piis"] = {"status": "NOT_PROVIDED"}
-    except (OSError, ValueError, ET.ParseError, DefusedXmlException, RecursionError):
+    except (OSError, ValueError, ET.ParseError, DefusedXmlException, RecursionError,
+            zipfile.BadZipFile, NotImplementedError, RuntimeError, EOFError):
         # Do not echo parser exceptions: they may contain confidential source values.
         report["findings"].append({"code": "INPUT_ERROR", "severity": "error",
                                     "message": "Unreadable, malformed, unsafe, oversized or unsupported input."})

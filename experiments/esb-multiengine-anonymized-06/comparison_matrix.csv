@@ -1,0 +1,5 @@
+case_ref,artifacts,components,sql_queries,sql_read_candidates,sql_write_candidates,opaque_logic,external_references
+case-01,1,11,3,1,2,4,0
+case-02,14,45,0,0,0,7,20
+case-03,6,25,0,0,0,2,5
+case-04,6,15,0,0,0,0,3

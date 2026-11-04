@@ -1,0 +1,267 @@
+{
+  "case_ref": "case-04",
+  "tool_version": "0.2",
+  "functional_conformance": "NOT_DEMONSTRATED",
+  "source_target_coverage": "NOT_CHECKED",
+  "migration_readiness": "REQUIRES_REVIEW",
+  "artifact_count": 6,
+  "excluded": {
+    "auxiliary_or_documentation": 3
+  },
+  "signals": {
+    "configuration": 1,
+    "external_reference": 3,
+    "input": 2,
+    "logging": 2,
+    "output": 2,
+    "route": 3,
+    "scheduling": 1,
+    "storage": 1
+  },
+  "artifacts": [
+    {
+      "artifact_ref": "artifact-0001",
+      "export": {
+        "profile": "synapse-xml-exploratory",
+        "sha256": "73fd26daf0b1a15175416024542ac0cedbaddf53de710b7964ebea09654614fd",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "api",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "resource",
+            "category": "route"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "resource",
+            "category": "route"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "log",
+            "category": "logging"
+          },
+          {
+            "source_ref": "component-0005",
+            "element": "send",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0006",
+            "element": "endpoint",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0007",
+            "element": "resource",
+            "category": "route"
+          }
+        ],
+        "signals": {
+          "external_reference": 1,
+          "input": 1,
+          "logging": 1,
+          "output": 1,
+          "route": 3
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 7
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0002",
+      "export": {
+        "profile": "synapse-xml-exploratory",
+        "sha256": "06005c6efdc788097219945d33fc27552b1a83ea4e401819784f7d341cb298ea",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "endpoint",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0003",
+      "export": {
+        "profile": "synapse-xml-exploratory",
+        "sha256": "d32f7a39e7402fff2615f6a5b79db52bf09242414a681b5f4360457eaa3d58da",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "localEntry",
+            "category": "configuration"
+          }
+        ],
+        "signals": {
+          "configuration": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0004",
+      "export": {
+        "profile": "synapse-xml-exploratory",
+        "sha256": "c95e11b22f906b5388e907aeaf884341a7541aafc246772bfab90c21162fc623",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "messageProcessor",
+            "category": "scheduling"
+          }
+        ],
+        "signals": {
+          "scheduling": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0005",
+      "export": {
+        "profile": "synapse-xml-exploratory",
+        "sha256": "d2706921fccff560c2aff358faf92c2a51e7bcd4a1ad894f88b27d5344744144",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "messageStore",
+            "category": "storage"
+          }
+        ],
+        "signals": {
+          "storage": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0006",
+      "export": {
+        "profile": "synapse-xml-exploratory",
+        "sha256": "ed1a96c5e1266f93dfdd6dbdd5f6eb308b1e046112d8dc08f43d23b6d0bdb849",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "proxy",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "log",
+            "category": "logging"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "call",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "endpoint",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 1,
+          "input": 1,
+          "logging": 1,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 4
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    }
+  ]
+}

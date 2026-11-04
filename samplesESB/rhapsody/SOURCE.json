@@ -1,0 +1,32 @@
+{
+  "engine": "rhapsody",
+  "repository": "https://github.com/CDCgov/NEDSS-DataIngestion",
+  "commit": "295871912c017aa1c6459c0a272e5210d03383ee",
+  "license": "Apache-2.0",
+  "retrieved_on": "2026-11-04",
+  "modified": false,
+  "selection": "Fuentes seleccionadas; se omiten binarios y capturas. No es un paquete de despliegue.",
+  "files": [
+    {
+      "path": "rhapsody/upstream/LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/CDCgov/NEDSS-DataIngestion/295871912c017aa1c6459c0a272e5210d03383ee/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "rhapsody/upstream/README.md",
+      "upstream_path": "README.md",
+      "url": "https://raw.githubusercontent.com/CDCgov/NEDSS-DataIngestion/295871912c017aa1c6459c0a272e5210d03383ee/README.md",
+      "bytes": 7903,
+      "sha256": "aa6a18c7a51c29bdef968c2ee291644745622f00698739a403aefb3d01de04fb"
+    },
+    {
+      "path": "rhapsody/upstream/data-ingestion-service/src/main/resources/rhapsody/NBS-Data-Ingestion-ELR-Route.rlc",
+      "upstream_path": "data-ingestion-service/src/main/resources/rhapsody/NBS-Data-Ingestion-ELR-Route.rlc",
+      "url": "https://raw.githubusercontent.com/CDCgov/NEDSS-DataIngestion/295871912c017aa1c6459c0a272e5210d03383ee/data-ingestion-service/src/main/resources/rhapsody/NBS-Data-Ingestion-ELR-Route.rlc",
+      "bytes": 7772,
+      "sha256": "58893505dda42667d7bffda63bdf53b09d25cd54b46831c68d1ce9f971a962b4"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Preserve upstream sample bytes so the recorded SHA-256 remains reproducible.
+samplesESB/**/upstream/** -text

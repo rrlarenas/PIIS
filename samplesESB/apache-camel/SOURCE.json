@@ -1,0 +1,137 @@
+{
+  "engine": "apache-camel",
+  "repository": "https://github.com/apache/camel-examples",
+  "commit": "869cde2a332ab6108572af0b1f93923bc3fc9768",
+  "license": "Apache-2.0",
+  "retrieved_on": "2026-11-04",
+  "modified": false,
+  "selection": "Fuentes seleccionadas; se omiten binarios y capturas. No es un paquete de despliegue.",
+  "files": [
+    {
+      "path": "apache-camel/upstream/LICENSE.txt",
+      "upstream_path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/LICENSE.txt",
+      "bytes": 11359,
+      "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac"
+    },
+    {
+      "path": "apache-camel/upstream/NOTICE.txt",
+      "upstream_path": "NOTICE.txt",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/NOTICE.txt",
+      "bytes": 596,
+      "sha256": "43af28693b143cb76ed17a909ffcf42e03634083e2cf98812a5a2055d0c5e693"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/README.adoc",
+      "upstream_path": "loadbalancing/README.adoc",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/README.adoc",
+      "bytes": 1781,
+      "sha256": "6e42b44427031c45be1b39709f435fc1a3ad426a12b40722d809f87752fa0789"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/pom.xml",
+      "upstream_path": "loadbalancing/pom.xml",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/pom.xml",
+      "bytes": 5277,
+      "sha256": "b25c47608d4ea1a7d1082b1ea03198b861f0659dee0d68a80d24539bbb9bc635"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/java/org/apache/camel/example/model/Report.java",
+      "upstream_path": "loadbalancing/src/main/java/org/apache/camel/example/model/Report.java",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/java/org/apache/camel/example/model/Report.java",
+      "bytes": 2173,
+      "sha256": "dab8296d8c91302ea17b251eb5379815eaf4f4ebe63e8084c8a4a45d44f25132"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/java/org/apache/camel/example/service/Generator.java",
+      "upstream_path": "loadbalancing/src/main/java/org/apache/camel/example/service/Generator.java",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/java/org/apache/camel/example/service/Generator.java",
+      "bytes": 1290,
+      "sha256": "62b6e1123e59654e1c3bbe0692676df92f901833a88207d9dbdcd4bba8db344d"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/java/org/apache/camel/example/service/Reporting.java",
+      "upstream_path": "loadbalancing/src/main/java/org/apache/camel/example/service/Reporting.java",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/java/org/apache/camel/example/service/Reporting.java",
+      "bytes": 1221,
+      "sha256": "e85bceb107b332221004f492105d490c011b96bffd61ae42b356060c6f76d163"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/LICENSE.txt",
+      "upstream_path": "loadbalancing/src/main/resources/META-INF/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/LICENSE.txt",
+      "bytes": 11359,
+      "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/NOTICE.txt",
+      "upstream_path": "loadbalancing/src/main/resources/META-INF/NOTICE.txt",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/NOTICE.txt",
+      "bytes": 596,
+      "sha256": "43af28693b143cb76ed17a909ffcf42e03634083e2cf98812a5a2055d0c5e693"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-context-loadbalancer.xml",
+      "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-context-loadbalancer.xml",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-context-loadbalancer.xml",
+      "bytes": 1649,
+      "sha256": "1492a374b34dca1e3b48f136173f32f6e53092a5e4d2270f5781828c052256e4"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-context-mina1.xml",
+      "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-context-mina1.xml",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-context-mina1.xml",
+      "bytes": 1909,
+      "sha256": "6b86b9f72cec7c26b2f998b6e465604532933c0e5ecc42462e20d141c74f6451"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-context-mina2.xml",
+      "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-context-mina2.xml",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-context-mina2.xml",
+      "bytes": 1909,
+      "sha256": "e4ebe554839ddc333179a8c00042429a95c53c604189524e9a59c7d62f22ecfc"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-route-context-loadbalancer.xml",
+      "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-route-context-loadbalancer.xml",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-route-context-loadbalancer.xml",
+      "bytes": 1308,
+      "sha256": "2afb465305594079e169c91c9f36a682842857759bb29ea961c5e3920a66880f"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/resources/META-INF/spring/camel-route-template-mina.xml",
+      "upstream_path": "loadbalancing/src/main/resources/META-INF/spring/camel-route-template-mina.xml",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/META-INF/spring/camel-route-template-mina.xml",
+      "bytes": 928,
+      "sha256": "00b2f9e68e6d77915fd12bde26471f2659eb24b206b84d3b7dfb7501a56f276e"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/main/resources/log4j2.properties",
+      "upstream_path": "loadbalancing/src/main/resources/log4j2.properties",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/main/resources/log4j2.properties",
+      "bytes": 1198,
+      "sha256": "c9f56d98987dd602bb7dd6cbe3a3f630fc838e3a39e4d1da4f921e5be4111df1"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/test/java/org/apache/camel/example/LoadBalancingTest.java",
+      "upstream_path": "loadbalancing/src/test/java/org/apache/camel/example/LoadBalancingTest.java",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/test/java/org/apache/camel/example/LoadBalancingTest.java",
+      "bytes": 2214,
+      "sha256": "32e271286769697543f2dfbdf98a8d1521f8b8db56877842de115b1c650e55f4"
+    },
+    {
+      "path": "apache-camel/upstream/loadbalancing/src/test/resources/org/apache/camel/example/test-camel-context.xml",
+      "upstream_path": "loadbalancing/src/test/resources/org/apache/camel/example/test-camel-context.xml",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/loadbalancing/src/test/resources/org/apache/camel/example/test-camel-context.xml",
+      "bytes": 2301,
+      "sha256": "991788fc36af5a35b36d7978c9e1c6517e03a544e7ea07bfe71f2e98be8dd825"
+    },
+    {
+      "path": "apache-camel/upstream/pom.xml",
+      "upstream_path": "pom.xml",
+      "url": "https://raw.githubusercontent.com/apache/camel-examples/869cde2a332ab6108572af0b1f93923bc3fc9768/pom.xml",
+      "bytes": 22090,
+      "sha256": "363e60cb133490ee6d2eeb03fcc9e27a7c11a451ec1c8264a0b515a1378c5578"
+    }
+  ]
+}

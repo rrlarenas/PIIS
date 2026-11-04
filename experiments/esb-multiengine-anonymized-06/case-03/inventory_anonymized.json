@@ -1,0 +1,333 @@
+{
+  "case_ref": "case-03",
+  "tool_version": "0.2",
+  "functional_conformance": "NOT_DEMONSTRATED",
+  "source_target_coverage": "NOT_CHECKED",
+  "migration_readiness": "REQUIRES_REVIEW",
+  "artifact_count": 6,
+  "excluded": {
+    "auxiliary_or_documentation": 12
+  },
+  "signals": {
+    "external_reference": 5,
+    "failover": 1,
+    "input": 3,
+    "logging": 1,
+    "opaque_logic": 2,
+    "output": 3,
+    "route": 3,
+    "routing": 1,
+    "template": 1,
+    "template_instance": 4,
+    "transform": 1,
+    "transport_direct": 2,
+    "transport_mina": 3,
+    "transport_timer": 1
+  },
+  "artifacts": [
+    {
+      "artifact_ref": "artifact-0001",
+      "export": {
+        "profile": "camel-spring-xml-exploratory",
+        "sha256": "1492a374b34dca1e3b48f136173f32f6e53092a5e4d2270f5781828c052256e4",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "routeContextRef",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0002",
+      "export": {
+        "profile": "camel-spring-xml-exploratory",
+        "sha256": "6b86b9f72cec7c26b2f998b6e465604532933c0e5ecc42462e20d141c74f6451",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "routeTemplateContextRef",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "templatedRoute",
+            "category": "template_instance"
+          }
+        ],
+        "signals": {
+          "external_reference": 1,
+          "template_instance": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 2
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0003",
+      "export": {
+        "profile": "camel-spring-xml-exploratory",
+        "sha256": "e4ebe554839ddc333179a8c00042429a95c53c604189524e9a59c7d62f22ecfc",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "routeTemplateContextRef",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "templatedRoute",
+            "category": "template_instance"
+          }
+        ],
+        "signals": {
+          "external_reference": 1,
+          "template_instance": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 2
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0004",
+      "export": {
+        "profile": "camel-spring-xml-exploratory",
+        "sha256": "2afb465305594079e169c91c9f36a682842857759bb29ea961c5e3920a66880f",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "route",
+            "category": "route"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "from",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "bean",
+            "category": "opaque_logic"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "to",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0005",
+            "element": "route",
+            "category": "route"
+          },
+          {
+            "source_ref": "component-0006",
+            "element": "from",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0007",
+            "element": "loadBalance",
+            "category": "routing"
+          },
+          {
+            "source_ref": "component-0008",
+            "element": "failoverLoadBalancer",
+            "category": "failover"
+          },
+          {
+            "source_ref": "component-0009",
+            "element": "to",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0010",
+            "element": "to",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0011",
+            "element": "log",
+            "category": "logging"
+          }
+        ],
+        "signals": {
+          "failover": 1,
+          "input": 2,
+          "logging": 1,
+          "opaque_logic": 1,
+          "output": 3,
+          "route": 2,
+          "routing": 1,
+          "transport_direct": 2,
+          "transport_mina": 2,
+          "transport_timer": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 11
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0005",
+      "export": {
+        "profile": "camel-spring-xml-exploratory",
+        "sha256": "00b2f9e68e6d77915fd12bde26471f2659eb24b206b84d3b7dfb7501a56f276e",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "routeTemplate",
+            "category": "template"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "route",
+            "category": "route"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "from",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "setHeader",
+            "category": "transform"
+          },
+          {
+            "source_ref": "component-0005",
+            "element": "bean",
+            "category": "opaque_logic"
+          }
+        ],
+        "signals": {
+          "input": 1,
+          "opaque_logic": 1,
+          "route": 1,
+          "template": 1,
+          "transform": 1,
+          "transport_mina": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 5
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0006",
+      "export": {
+        "profile": "camel-spring-xml-exploratory",
+        "sha256": "991788fc36af5a35b36d7978c9e1c6517e03a544e7ea07bfe71f2e98be8dd825",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "routeTemplateContextRef",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "routeContextRef",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "templatedRoute",
+            "category": "template_instance"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "templatedRoute",
+            "category": "template_instance"
+          }
+        ],
+        "signals": {
+          "external_reference": 2,
+          "template_instance": 2
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 4
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    }
+  ]
+}

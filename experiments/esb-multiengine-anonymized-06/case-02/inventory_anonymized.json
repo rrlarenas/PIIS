@@ -1,0 +1,822 @@
+{
+  "case_ref": "case-02",
+  "tool_version": "0.2",
+  "functional_conformance": "NOT_DEMONSTRATED",
+  "source_target_coverage": "NOT_CHECKED",
+  "migration_readiness": "REQUIRES_REVIEW",
+  "artifact_count": 14,
+  "excluded": {
+    "auxiliary_or_documentation": 22
+  },
+  "signals": {
+    "external_reference": 20,
+    "filter": 1,
+    "input": 8,
+    "opaque_logic": 7,
+    "output": 8,
+    "transform": 1
+  },
+  "artifacts": [
+    {
+      "artifact_ref": "artifact-0001",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "4bf4a6ac7871aba2bc47c6ea1a157538022796ad74b383e500f64faea7c394af",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "node",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 4
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0004",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0004",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 4
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0002",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "1c073679dddbca69dcc88e5cfa158fe432ed071fd0fd066cbfb2f7e09aece6ea",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 3
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 3
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0003",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "482697122e2b4b6a5e3b041fca93041db2910c38c8194296800dab57a791a10c",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0005",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0006",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0007",
+            "element": "node",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 5,
+          "input": 1,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0004",
+            "target_ref": "component-0005",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0005",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0006",
+            "target_ref": "component-0007",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0007",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 7
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0004",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "3e17871c8e293ae06fc5368bf7dd99f297f3795086f61a48d0681f16a6cbdb96",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 1,
+          "input": 1,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 3
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0005",
+      "export": {
+        "profile": "ibm-map-exploratory",
+        "sha256": "53b0eed3f431226f363a178e0a886fc26332e41000129b4e2a3f687e70cb933b",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "mapping",
+            "category": "transform"
+          }
+        ],
+        "signals": {
+          "transform": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0006",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "57c376f6526e58ad114854e8304a2ffabd71a44e8e86ee26e699a3bd682be1c5",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "node",
+            "category": "filter"
+          },
+          {
+            "source_ref": "component-0005",
+            "element": "node",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 2,
+          "filter": 1,
+          "input": 1,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0004",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0004",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0004",
+            "target_ref": "component-0005",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0005",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0004",
+            "target_ref": "component-0005",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0005",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 5
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0007",
+      "export": {
+        "profile": "ibm-esql-exploratory",
+        "sha256": "d4c4cce0b2bfb8bc353ff2e569c4a45d3a07d5c64ca9750252382a4c9c4eb74a",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "module",
+            "category": "opaque_logic"
+          }
+        ],
+        "signals": {
+          "opaque_logic": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0008",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "1c5fec9b2b4fdf75d54afd0ce6d2e29ed2246620a71eefee59b9b753159bcb8c",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "opaque_logic"
+          }
+        ],
+        "signals": {
+          "input": 1,
+          "opaque_logic": 1,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 3
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0009",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "bfb4eba679cb0cf0feb9f85dd5bd43d388845eea1e748e78e42c41c9d9fa9b23",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "opaque_logic"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0005",
+            "element": "node",
+            "category": "opaque_logic"
+          }
+        ],
+        "signals": {
+          "external_reference": 1,
+          "input": 1,
+          "opaque_logic": 2,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0004",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0004",
+            "target_ref": "component-0005",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0005",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 5
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0010",
+      "export": {
+        "profile": "ibm-esql-exploratory",
+        "sha256": "a47c66e5fac8cb369e8d86ac69ee00920f151ca52fdc6378ef18db5075febccc",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "module",
+            "category": "opaque_logic"
+          }
+        ],
+        "signals": {
+          "opaque_logic": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0011",
+      "export": {
+        "profile": "ibm-esql-exploratory",
+        "sha256": "8d4323eb2e961898f25e801b9210f4ae7f680c3ba6b98945eb4ce4c33cdc79e8",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "module",
+            "category": "opaque_logic"
+          }
+        ],
+        "signals": {
+          "opaque_logic": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "component_count": 1
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0012",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "6b827d20b66c8779751c1de44ffb42a68a0d127c29c623a5ac3015cceca51613",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "opaque_logic"
+          }
+        ],
+        "signals": {
+          "input": 1,
+          "opaque_logic": 1,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 3
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0013",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "52b893f88794b2026993739dfcfa14196887e20891589d3be3852ca60fd43082",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "node",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 2,
+          "input": 1,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0004",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0004",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 4
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    },
+    {
+      "artifact_ref": "artifact-0014",
+      "export": {
+        "profile": "ibm-flow-xmi-exploratory",
+        "sha256": "e67f6933444cc1043008f184975efbd1d03ca2f2931d7077b363228106660303",
+        "components": [
+          {
+            "source_ref": "component-0001",
+            "element": "node",
+            "category": "input"
+          },
+          {
+            "source_ref": "component-0002",
+            "element": "node",
+            "category": "output"
+          },
+          {
+            "source_ref": "component-0003",
+            "element": "node",
+            "category": "external_reference"
+          },
+          {
+            "source_ref": "component-0004",
+            "element": "node",
+            "category": "external_reference"
+          }
+        ],
+        "signals": {
+          "external_reference": 2,
+          "input": 1,
+          "output": 1
+        },
+        "sql_evidence": [],
+        "analysis_scope": "STATIC_SINGLE_ARTIFACT_NO_DEPENDENCY_RESOLUTION",
+        "connections": [
+          {
+            "source_ref": "component-0003",
+            "target_ref": "component-0002",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0004",
+            "target_ref": "component-0003",
+            "resolution": "RESOLVED"
+          },
+          {
+            "source_ref": "component-0001",
+            "target_ref": "component-0004",
+            "resolution": "RESOLVED"
+          }
+        ],
+        "component_count": 4
+      },
+      "findings": [
+        {
+          "code": "SEMANTICS_NOT_ESTABLISHED",
+          "severity": "warning",
+          "message": "Static evidence does not prove execution, reachability, equivalence or migration readiness."
+        },
+        {
+          "code": "DEPENDENCIES_NOT_RESOLVED",
+          "severity": "warning",
+          "message": "External code, templates, references and bindings require separate review."
+        }
+      ]
+    }
+  ]
+}

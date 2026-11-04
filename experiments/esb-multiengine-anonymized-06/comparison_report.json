@@ -1,0 +1,57 @@
+{
+  "tool_version": "0.2",
+  "comparison_kind": "STATIC_HETEROGENEOUS_ARTIFACT_INVENTORY",
+  "functional_equivalence": "NOT_TESTED",
+  "shared_functional_contract": "NOT_DEFINED",
+  "scope": "FOUR_INDEPENDENT_CASES_NOT_EQUIVALENT_IMPLEMENTATIONS",
+  "reference_scope": "CASE_AND_ARTIFACT_LOCAL_NO_CROSS_ENGINE_IDENTITY",
+  "cases": [
+    {
+      "case_ref": "case-01",
+      "artifacts": 1,
+      "components": 11,
+      "sql_queries": 3,
+      "sql_read_candidates": 1,
+      "sql_write_candidates": 2,
+      "opaque_logic": 4,
+      "external_references": 0
+    },
+    {
+      "case_ref": "case-02",
+      "artifacts": 14,
+      "components": 45,
+      "sql_queries": 0,
+      "sql_read_candidates": 0,
+      "sql_write_candidates": 0,
+      "opaque_logic": 7,
+      "external_references": 20
+    },
+    {
+      "case_ref": "case-03",
+      "artifacts": 6,
+      "components": 25,
+      "sql_queries": 0,
+      "sql_read_candidates": 0,
+      "sql_write_candidates": 0,
+      "opaque_logic": 2,
+      "external_references": 5
+    },
+    {
+      "case_ref": "case-04",
+      "artifacts": 6,
+      "components": 15,
+      "sql_queries": 0,
+      "sql_read_candidates": 0,
+      "sql_write_candidates": 0,
+      "opaque_logic": 0,
+      "external_references": 3
+    }
+  ],
+  "limitations": [
+    "PARTIAL_SOURCE_SELECTION",
+    "NO_RUNTIME_EXECUTION",
+    "NO_DEPENDENCY_RESOLUTION",
+    "SQL_LEXICAL_PARTIAL_NOT_SEMANTIC",
+    "COUNTS_ARE_NOT_PORTABILITY_SCORES"
+  ]
+}
